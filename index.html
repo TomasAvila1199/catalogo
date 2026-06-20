@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catálogo de Fragancias — Premium Selection</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --bg-color: #0a0a0b;
+            --card-bg: #121214;
+            --text-main: #ffffff;
+            --text-muted: #8e8e93;
+            --accent: #c5a880; /* Dorado sutil/Champagne */
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            font-family: 'Inter', sans-serif;
+            padding: 2rem 1rem;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        header h1 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 2.5rem;
+            font-weight: 600;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 0.5rem;
+        }
+
+        header p {
+            color: var(--accent);
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            font-weight: 300;
+        }
+
+        /* Filtros Minimalistas */
+        .filters {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            margin-bottom: 3rem;
+        }
+
+        .filter-btn {
+            background: none;
+            border: none;
+            color: var(--text-muted);
+            font-family: 'Inter', sans-serif;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            cursor: pointer;
+            transition: color 0.3s ease;
+            padding-bottom: 4px;
+        }
+
+        .filter-btn.active, .filter-btn:hover {
+            color: var(--text-main);
+            border-bottom: 1px solid var(--accent);
+        }
+
+        /* Grid del Catálogo */
+        .catalog-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        /* Tarjeta de Producto */
+        .product-card {
+            background-color: var(--card-bg);
+            border-radius: 0px; /* Bordes rectos para estética más premium */
+            overflow: hidden;
+            transition: transform 0.4s ease, box-shadow 0.4s ease;
+        }
+
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+        }
+
+        .image-container {
+            width: 100%;
+            aspect-ratio: 1 / 1; /* Formato cuadrado tipo Instagram */
+            overflow: hidden;
+            background-color: #1a1a1c;
+        }
+
+        .image-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.6s ease;
+        }
+
+        .product-card:hover .image-container img {
+            transform: scale(1.05);
+        }
+
+        .product-info {
+            padding: 1.2rem;
+            text-align: center;
+        }
+
+        .product-gender {
+            font-size: 0.75rem;
+            color: var(--accent);
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            margin-bottom: 0.4rem;
+        }
+
+        .product-name {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.35rem;
+            font-weight: 400;
+            margin-bottom: 0.6rem;
+            line-height: 1.2;
+        }
+
+        .product-price {
+            font-size: 1.1rem;
+            font-weight: 400;
+            letter-spacing: 0.5px;
+        }
+
+        /* Responsivo */
+        @media (max-width: 480px) {
+            .catalog-grid {
+                grid-template-columns: repeat(2, 1fr); /* Dos columnas en celular tipo feed */
+                gap: 1rem;
+            }
+            .product-info {
+                padding: 0.8rem;
+            }
+            .product-name {
+                font-size: 1.1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Scenth Store</h1>
+        <p>Catálogo Exclusivo</p>
+    </header>
+
+    <div class="filters">
+        <button class="filter-btn active" onclick="filterGender('todos')">Todos</button>
+        <button class="filter-btn" onclick="filterGender('masculino')">Masculino</button>
+        <button class="filter-btn" onclick="filterGender('femenino')">Femenino</button>
+        <button class="filter-btn" onclick="filterGender('unisex')">Unisex</button>
+    </div>
+
+    <main class="catalog-grid" id="catalog"></main>
+
+    <script>
+        // Array de productos (Fácil de actualizar para un Sysadmin)
+        const products = [
+            {
+                name: "Asad Elixir",
+                gender: "masculino",
+                price: "$45.000",
+                image: "images/asad_elixir.jpg"
+            },
+            {
+                name: "Yara Candy",
+                gender: "femenino",
+                price: "$42.000",
+                image: "images/yara_candy.jpg"
+            },
+            {
+                name: "Club de Nuit Intense",
+                gender: "masculino",
+                price: "$55.000",
+                image: "images/cdn_intense.jpg"
+            },
+            {
+                name: "Khamrah",
+                gender: "unisex",
+                price: "$48.000",
+                image: "images/khamrah.jpg"
+            }
+        ];
+
+        function renderCatalog(items) {
+            const catalogContainer = document.getElementById('catalog');
+            catalogContainer.innerHTML = '';
+
+            items.forEach(product => {
+                const card = document.createElement('div');
+                card.className = 'product-card';
+                card.innerHTML = `
+                    <div class="image-container">
+                        <img src="${product.image}" alt="${product.name}" loading="lazy">
+                    </div>
+                    <div class="product-info">
+                        <div class="product-gender">${product.gender}</div>
+                        <div class="product-name">${product.name}</div>
+                        <div class="product-price">${product.price}</div>
+                    </div>
+                `;
+                catalogContainer.appendChild(card);
+            });
+        }
+
+        function filterGender(gender) {
+            // Actualizar estado de botones
+            const buttons = document.querySelectorAll('.filter-btn');
+            buttons.forEach(btn => btn.classList.remove('active'));
+            event.target.classList.add('active');
+
+            if (gender === 'todos') {
+                renderCatalog(products);
+            } else {
+                const filtered = products.filter(p => p.gender === gender);
+                renderCatalog(filtered);
+            }
+        }
+
+        // Carga inicial
+        renderCatalog(products);
+    </script>
+</body>
+</html>
