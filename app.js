@@ -7,6 +7,9 @@ const emptyState = document.querySelector('#empty-state');
 const searchInput = document.querySelector('#search');
 const genderFilter = document.querySelector('#gender-filter');
 const statusTabs = [...document.querySelectorAll('.status-tab')];
+const whatsappNudge = document.querySelector('#whatsapp-nudge');
+const whatsappNudgeClose = document.querySelector('.whatsapp-nudge-close');
+const floatingWhatsApp = document.querySelector('.floating-whatsapp');
 
 const state = {
     status: 'disponible',
@@ -25,6 +28,16 @@ function setWhatsAppLinks() {
         link.target = '_blank';
         link.rel = 'noreferrer';
     });
+}
+
+function setupWhatsAppNudge() {
+    if (!whatsappNudge) return;
+
+    const hideNudge = () => whatsappNudge.classList.remove('visible');
+    window.setTimeout(() => whatsappNudge.classList.add('visible'), 900);
+    window.setTimeout(hideNudge, 14000);
+    whatsappNudgeClose?.addEventListener('click', hideNudge);
+    floatingWhatsApp?.addEventListener('click', hideNudge);
 }
 
 function normalize(value) {
@@ -143,5 +156,6 @@ document.querySelector('#clear-filters').addEventListener('click', () => {
 });
 
 setWhatsAppLinks();
+setupWhatsAppNudge();
 updateCounts();
 renderCatalog();

@@ -13,7 +13,7 @@ window.CATALOG_PRODUCTS = [
         volume: '120 ml',
         status: 'disponible',
         price: '$90.000',
-        image: '',
+        image: 'images/al-haramain-amber-oud-gold-edition-logo.jpg',
         reference: ''
     },
     {
@@ -23,7 +23,7 @@ window.CATALOG_PRODUCTS = [
         volume: '100 ml',
         status: 'disponible',
         price: '$90.000',
-        image: '',
+        image: 'images/al-haramain-aqua-dubai-logo.jpg',
         reference: ''
     },
     {
@@ -143,7 +143,7 @@ window.CATALOG_PRODUCTS = [
         volume: '',
         status: 'disponible',
         price: '$50.000',
-        image: '',
+        image: 'images/lattafa-vintage-radio-logo.jpg',
         reference: ''
     },
     {
@@ -153,7 +153,7 @@ window.CATALOG_PRODUCTS = [
         volume: '',
         status: 'disponible',
         price: '$45.000',
-        image: '',
+        image: 'images/lattafa-honor-glory-logo.jpg',
         reference: ''
     },
     {
@@ -163,7 +163,7 @@ window.CATALOG_PRODUCTS = [
         volume: '',
         status: 'disponible',
         price: '$53.000',
-        image: '',
+        image: 'images/lattafa-eclaire-logo.jpg',
         reference: ''
     },
     {
@@ -173,7 +173,7 @@ window.CATALOG_PRODUCTS = [
         volume: '',
         status: 'disponible',
         price: '$47.000',
-        image: '',
+        image: 'images/lattafa-fakhar-rose-logo.jpg',
         reference: ''
     },
     {
@@ -183,7 +183,7 @@ window.CATALOG_PRODUCTS = [
         volume: '',
         status: 'disponible',
         price: '$45.000',
-        image: '',
+        image: 'images/lattafa-khamrah-qahwa-logo.jpg',
         reference: ''
     },
     {
@@ -193,7 +193,7 @@ window.CATALOG_PRODUCTS = [
         volume: '',
         status: 'disponible',
         price: '$51.000',
-        image: '',
+        image: 'images/maison-alhambra-sceptre-malachite-logo.jpg',
         reference: ''
     },
     {
@@ -203,7 +203,7 @@ window.CATALOG_PRODUCTS = [
         volume: '',
         status: 'disponible',
         price: '$59.000',
-        image: '',
+        image: 'images/maison-alhambra-jean-lowe-vibes-logo.jpg',
         reference: ''
     },
     {
@@ -213,7 +213,7 @@ window.CATALOG_PRODUCTS = [
         volume: '',
         status: 'disponible',
         price: '$62.000',
-        image: '',
+        image: 'images/rasasi-hawas-black-logo.jpg',
         reference: ''
     },
     {
@@ -223,7 +223,7 @@ window.CATALOG_PRODUCTS = [
         volume: '',
         status: 'disponible',
         price: '$74.000',
-        image: '',
+        image: 'images/rasasi-hawas-ice-logo.jpg',
         reference: ''
     },
     {
@@ -243,7 +243,7 @@ window.CATALOG_PRODUCTS = [
         volume: '',
         status: 'disponible',
         price: '$69.000',
-        image: '',
+        image: 'images/rasasi-hawas-elixir-logo.jpg',
         reference: ''
     },
     {
@@ -303,7 +303,7 @@ window.CATALOG_PRODUCTS = [
         volume: '',
         status: 'disponible',
         price: '$70.000',
-        image: '',
+        image: 'images/dumont-nitro-red-logo.jpg',
         reference: ''
     },
     {
