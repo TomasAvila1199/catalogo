@@ -83,7 +83,7 @@ window.CATALOG_PRODUCTS = [
         volume: '100 ml',
         status: 'disponible',
         price: '$53.000',
-        image: '',
+        image: 'images/armaf-odyssey-mandarin-sky-logo.jpg',
         reference: ''
     },
     {
