@@ -487,7 +487,7 @@ a {
 .stock-badge {
     position: absolute;
     top: 0.7rem;
-    left: 0.7rem;
+    right: 0.7rem;
     padding: 0.45rem 0.55rem;
     background: rgba(11, 11, 10, 0.88);
     color: var(--gold-light);
