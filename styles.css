@@ -740,12 +740,15 @@ a {
 }
 
 .whatsapp-nudge {
-    width: min(270px, calc(100vw - 2.4rem));
-    padding: 0.9rem 2.15rem 0.9rem 1rem;
-    border: 1px solid rgba(130, 182, 142, 0.38);
-    background: rgba(17, 17, 15, 0.96);
-    color: var(--text);
-    box-shadow: 0 16px 38px rgba(0, 0, 0, 0.4);
+    width: min(315px, calc(100vw - 1.8rem));
+    padding: 0.55rem 2.1rem 0.55rem 0.55rem;
+    border: 1px solid rgba(37, 211, 102, 0.68);
+    border-radius: 14px;
+    background:
+        radial-gradient(circle at 88% 10%, rgba(37, 211, 102, 0.22), transparent 42%),
+        linear-gradient(135deg, rgba(14, 39, 25, 0.98), rgba(12, 14, 12, 0.99) 72%);
+    color: #fff;
+    box-shadow: 0 18px 44px rgba(0, 0, 0, 0.5), 0 0 24px rgba(37, 211, 102, 0.16);
     backdrop-filter: blur(14px);
     position: relative;
     opacity: 0;
@@ -761,9 +764,9 @@ a {
     bottom: -7px;
     width: 12px;
     height: 12px;
-    border-right: 1px solid rgba(130, 182, 142, 0.38);
-    border-bottom: 1px solid rgba(130, 182, 142, 0.38);
-    background: #11110f;
+    border-right: 1px solid rgba(37, 211, 102, 0.68);
+    border-bottom: 1px solid rgba(37, 211, 102, 0.68);
+    background: #0d1d13;
     transform: rotate(45deg);
 }
 
@@ -771,24 +774,97 @@ a {
     opacity: 1;
     visibility: visible;
     transform: translateY(0) scale(1);
+    animation: whatsapp-nudge-glow 2.4s ease-in-out 2;
 }
 
-.whatsapp-nudge strong,
-.whatsapp-nudge span {
+.whatsapp-nudge-link {
+    display: grid;
+    grid-template-columns: 46px minmax(0, 1fr);
+    align-items: center;
+    gap: 0.75rem;
+    color: inherit;
+    text-decoration: none;
+}
+
+.whatsapp-nudge-icon {
+    width: 46px;
+    height: 46px;
+    display: grid;
+    place-items: center;
+    border-radius: 50%;
+    color: #fff;
+    background: #25d366;
+    box-shadow: 0 8px 22px rgba(37, 211, 102, 0.32);
+}
+
+.whatsapp-nudge-icon svg {
+    width: 27px;
+    height: 27px;
+    fill: currentColor;
+}
+
+.whatsapp-nudge-icon svg path:first-child {
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 1.8;
+}
+
+.whatsapp-nudge-copy,
+.whatsapp-nudge-copy > span,
+.whatsapp-nudge-copy strong {
     display: block;
 }
 
-.whatsapp-nudge strong {
-    color: #b9e7c3;
-    font-family: var(--font-display);
-    font-size: 1.15rem;
+.whatsapp-nudge-kicker {
+    color: #8df0ad;
+    font-size: 0.58rem;
+    font-weight: 700;
+    letter-spacing: 0.11em;
+    line-height: 1.2;
+    text-transform: uppercase;
 }
 
-.whatsapp-nudge span {
-    margin-top: 0.15rem;
-    color: var(--muted);
-    font-size: 0.74rem;
-    line-height: 1.45;
+.whatsapp-nudge-kicker i {
+    display: inline-block;
+    width: 6px;
+    height: 6px;
+    margin-right: 0.28rem;
+    border-radius: 50%;
+    background: #25d366;
+    box-shadow: 0 0 0 3px rgba(37, 211, 102, 0.16);
+}
+
+.whatsapp-nudge-copy strong {
+    margin-top: 0.2rem;
+    color: #fff;
+    font-family: var(--font-display);
+    font-size: 1.12rem;
+    line-height: 1.05;
+}
+
+.whatsapp-nudge-message {
+    margin-top: 0.18rem;
+    color: rgba(255, 255, 255, 0.68);
+    font-size: 0.69rem;
+    line-height: 1.35;
+}
+
+.whatsapp-nudge-cta {
+    margin-top: 0.34rem;
+    color: #78e99b;
+    font-size: 0.7rem;
+    font-weight: 700;
+}
+
+.whatsapp-nudge-cta b {
+    display: inline-block;
+    margin-left: 0.18rem;
+    transition: transform 180ms ease;
+}
+
+.whatsapp-nudge-link:hover .whatsapp-nudge-cta b,
+.whatsapp-nudge-link:focus-visible .whatsapp-nudge-cta b {
+    transform: translateX(3px);
 }
 
 .whatsapp-nudge-close {
@@ -804,6 +880,15 @@ a {
     cursor: pointer;
     font-size: 1.15rem;
     line-height: 1;
+}
+
+@keyframes whatsapp-nudge-glow {
+    0%, 100% {
+        box-shadow: 0 18px 44px rgba(0, 0, 0, 0.5), 0 0 22px rgba(37, 211, 102, 0.14);
+    }
+    50% {
+        box-shadow: 0 18px 44px rgba(0, 0, 0, 0.5), 0 0 34px rgba(37, 211, 102, 0.32);
+    }
 }
 
 :focus-visible {
