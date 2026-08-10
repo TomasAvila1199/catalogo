@@ -68,7 +68,6 @@ function buildProductCard(product) {
     const badge = card.querySelector('.stock-badge');
     const meta = card.querySelector('.product-meta');
     const name = card.querySelector('.product-name');
-    const reference = card.querySelector('.product-reference');
     const price = card.querySelector('.product-price');
     const action = card.querySelector('.product-action');
 
@@ -89,7 +88,6 @@ function buildProductCard(product) {
     badge.classList.toggle('available', isAvailable);
     meta.textContent = [product.brand, product.gender, product.volume].filter(Boolean).join(' · ');
     name.textContent = product.name;
-    reference.textContent = product.reference || 'Fragancia original sellada';
     price.textContent = isAvailable ? product.price : 'Precio al ingresar';
     price.classList.toggle('order', !isAvailable);
     action.textContent = isAvailable ? 'Comprar' : 'Consultar';
