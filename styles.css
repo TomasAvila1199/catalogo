@@ -175,6 +175,48 @@ a {
     padding-inline: 1rem;
 }
 
+.header-whatsapp {
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(135deg, #29dc70, #16a94e);
+    border-color: #53ea8b;
+    color: #fff;
+    box-shadow: 0 9px 26px rgba(37, 211, 102, 0.26), inset 0 1px 0 rgba(255, 255, 255, 0.25);
+}
+
+.header-whatsapp::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(110deg, transparent 25%, rgba(255, 255, 255, 0.24) 48%, transparent 70%);
+    transform: translateX(-130%);
+    transition: transform 480ms ease;
+}
+
+.header-whatsapp:hover::after,
+.header-whatsapp:focus-visible::after {
+    transform: translateX(130%);
+}
+
+.header-whatsapp svg {
+    position: relative;
+    z-index: 1;
+    width: 19px;
+    height: 19px;
+    fill: currentColor;
+}
+
+.header-whatsapp svg path:first-child {
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 1.8;
+}
+
+.header-whatsapp span {
+    position: relative;
+    z-index: 1;
+}
+
 .button-secondary {
     background: transparent;
     color: var(--text);
@@ -552,17 +594,27 @@ a {
 
 .product-action {
     flex: 0 0 auto;
-    color: var(--gold-light);
+    min-height: 34px;
+    padding: 0.55rem 0.72rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, var(--gold-light), var(--gold));
+    border: 1px solid var(--gold-light);
+    color: #120e07;
+    box-shadow: 0 7px 18px rgba(214, 170, 73, 0.16);
     font-size: 0.67rem;
     font-weight: 700;
     letter-spacing: 0.07em;
     text-transform: uppercase;
+    transition: transform 180ms ease, filter 180ms ease, box-shadow 180ms ease;
 }
 
 .product-action:hover,
 .product-action:focus-visible {
-    text-decoration: underline;
-    text-underline-offset: 0.25rem;
+    transform: translateY(-2px);
+    filter: brightness(1.08);
+    box-shadow: 0 10px 24px rgba(214, 170, 73, 0.25);
 }
 
 .empty-state {
@@ -709,8 +761,8 @@ a {
 }
 
 .floating-whatsapp {
-    width: 54px;
-    height: 54px;
+    width: 58px;
+    height: 58px;
     border-radius: 50%;
     display: grid;
     place-items: center;
@@ -728,15 +780,17 @@ a {
 }
 
 .floating-whatsapp svg {
-    width: 31px;
-    height: 31px;
+    width: 35px;
+    height: 35px;
     fill: currentColor;
 }
 
 .floating-whatsapp svg path:first-child {
     fill: none;
     stroke: currentColor;
-    stroke-width: 1.8;
+    stroke-width: 2.35;
+    stroke-linecap: round;
+    stroke-linejoin: round;
 }
 
 .whatsapp-nudge {
