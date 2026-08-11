@@ -122,7 +122,6 @@ function renderCatalog() {
 
 function updateCounts() {
     document.querySelector('#available-count').textContent = products.filter((product) => product.status === 'disponible').length;
-    document.querySelector('#order-count').textContent = products.filter((product) => product.status === 'pedido').length;
 }
 
 statusTabs.forEach((tab) => {

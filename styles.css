@@ -396,22 +396,28 @@ a {
 
 .status-tabs {
     display: flex;
-    gap: 0.25rem;
-    padding: 0.3rem;
-    border: 1px solid var(--line-light);
-    background: var(--surface);
+    gap: 0.55rem;
+    padding: 0;
+    background: transparent;
 }
 
 .status-tab {
-    border: 0;
-    background: transparent;
-    color: var(--muted);
-    padding: 0.75rem 1rem;
+    border: 1px solid var(--line-light);
+    background: var(--surface);
+    color: var(--text);
+    padding: 0.78rem 1.1rem;
     cursor: pointer;
     font-size: 0.78rem;
     font-weight: 600;
     text-transform: uppercase;
     letter-spacing: 0.06em;
+    transition: border-color 180ms ease, background 180ms ease, color 180ms ease, transform 180ms ease;
+}
+
+.status-tab:hover {
+    border-color: var(--gold);
+    color: var(--gold);
+    transform: translateY(-1px);
 }
 
 .status-tab span {
@@ -421,7 +427,9 @@ a {
 
 .status-tab.active {
     background: var(--gold);
+    border-color: var(--gold);
     color: #0e0b06;
+    box-shadow: 0 8px 20px rgba(213, 160, 22, 0.16);
 }
 
 .status-tab.active span {
