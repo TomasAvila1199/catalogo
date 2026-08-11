@@ -201,15 +201,26 @@ a {
 .header-whatsapp svg {
     position: relative;
     z-index: 1;
-    width: 19px;
-    height: 19px;
+    width: 22px;
+    height: 22px;
     fill: currentColor;
 }
 
 .header-whatsapp svg path:first-child {
     fill: none;
     stroke: currentColor;
-    stroke-width: 1.8;
+    stroke-width: 2.7;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+.header-whatsapp svg path:last-child {
+    fill: currentColor;
+    stroke: currentColor;
+    stroke-width: 0.8;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    paint-order: stroke fill;
 }
 
 .header-whatsapp span {
@@ -761,8 +772,8 @@ a {
 }
 
 .floating-whatsapp {
-    width: 58px;
-    height: 58px;
+    width: 60px;
+    height: 60px;
     border-radius: 50%;
     display: grid;
     place-items: center;
@@ -780,17 +791,26 @@ a {
 }
 
 .floating-whatsapp svg {
-    width: 35px;
-    height: 35px;
+    width: 39px;
+    height: 39px;
     fill: currentColor;
 }
 
 .floating-whatsapp svg path:first-child {
     fill: none;
     stroke: currentColor;
-    stroke-width: 2.35;
+    stroke-width: 3.2;
     stroke-linecap: round;
     stroke-linejoin: round;
+}
+
+.floating-whatsapp svg path:last-child {
+    fill: currentColor;
+    stroke: currentColor;
+    stroke-width: 1.15;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    paint-order: stroke fill;
 }
 
 .whatsapp-nudge {
@@ -852,15 +872,26 @@ a {
 }
 
 .whatsapp-nudge-icon svg {
-    width: 27px;
-    height: 27px;
+    width: 30px;
+    height: 30px;
     fill: currentColor;
 }
 
 .whatsapp-nudge-icon svg path:first-child {
     fill: none;
     stroke: currentColor;
-    stroke-width: 1.8;
+    stroke-width: 2.7;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+.whatsapp-nudge-icon svg path:last-child {
+    fill: currentColor;
+    stroke: currentColor;
+    stroke-width: 0.85;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    paint-order: stroke fill;
 }
 
 .whatsapp-nudge-copy,
