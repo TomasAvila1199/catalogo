@@ -198,29 +198,14 @@ a {
     transform: translateX(130%);
 }
 
-.header-whatsapp svg {
+.header-whatsapp img {
     position: relative;
     z-index: 1;
-    width: 22px;
-    height: 22px;
-    fill: currentColor;
-}
-
-.header-whatsapp svg path:first-child {
-    fill: none;
-    stroke: currentColor;
-    stroke-width: 2.7;
-    stroke-linecap: round;
-    stroke-linejoin: round;
-}
-
-.header-whatsapp svg path:last-child {
-    fill: currentColor;
-    stroke: currentColor;
-    stroke-width: 0.8;
-    stroke-linecap: round;
-    stroke-linejoin: round;
-    paint-order: stroke fill;
+    width: 24px;
+    height: 24px;
+    display: block;
+    border-radius: 50%;
+    object-fit: cover;
 }
 
 .header-whatsapp span {
@@ -595,7 +580,7 @@ a {
     padding-top: 1rem;
     border-top: 1px solid var(--line-light);
     display: flex;
-    align-items: end;
+    align-items: center;
     justify-content: space-between;
     gap: 0.65rem;
 }
@@ -604,6 +589,7 @@ a {
     color: var(--text);
     font-size: 0.9rem;
     font-weight: 700;
+    line-height: 1;
 }
 
 .product-price.order {
@@ -790,6 +776,7 @@ a {
     border: 1px solid rgba(255, 255, 255, 0.24);
     box-shadow: 0 12px 32px rgba(0, 0, 0, 0.42), 0 0 0 0 rgba(37, 211, 102, 0.35);
     transition: transform 180ms ease, filter 180ms ease;
+    overflow: hidden;
 }
 
 .floating-whatsapp:hover,
@@ -798,27 +785,12 @@ a {
     filter: brightness(1.06);
 }
 
-.floating-whatsapp svg {
-    width: 39px;
-    height: 39px;
-    fill: currentColor;
-}
-
-.floating-whatsapp svg path:first-child {
-    fill: none;
-    stroke: currentColor;
-    stroke-width: 3.2;
-    stroke-linecap: round;
-    stroke-linejoin: round;
-}
-
-.floating-whatsapp svg path:last-child {
-    fill: currentColor;
-    stroke: currentColor;
-    stroke-width: 1.15;
-    stroke-linecap: round;
-    stroke-linejoin: round;
-    paint-order: stroke fill;
+.floating-whatsapp img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    border-radius: 50%;
+    object-fit: cover;
 }
 
 .whatsapp-nudge {
@@ -877,29 +849,15 @@ a {
     color: #fff;
     background: #25d366;
     box-shadow: 0 8px 22px rgba(37, 211, 102, 0.32);
+    overflow: hidden;
 }
 
-.whatsapp-nudge-icon svg {
-    width: 30px;
-    height: 30px;
-    fill: currentColor;
-}
-
-.whatsapp-nudge-icon svg path:first-child {
-    fill: none;
-    stroke: currentColor;
-    stroke-width: 2.7;
-    stroke-linecap: round;
-    stroke-linejoin: round;
-}
-
-.whatsapp-nudge-icon svg path:last-child {
-    fill: currentColor;
-    stroke: currentColor;
-    stroke-width: 0.85;
-    stroke-linecap: round;
-    stroke-linejoin: round;
-    paint-order: stroke fill;
+.whatsapp-nudge-icon img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    border-radius: 50%;
+    object-fit: cover;
 }
 
 .whatsapp-nudge-copy,
