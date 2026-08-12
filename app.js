@@ -7,6 +7,8 @@ const emptyState = document.querySelector('#empty-state');
 const searchInput = document.querySelector('#search');
 const genderFilter = document.querySelector('#gender-filter');
 const statusTabs = [...document.querySelectorAll('.status-tab')];
+const searchRow = document.querySelector('.search-row');
+const orderPanel = document.querySelector('#order-panel');
 const whatsappNudge = document.querySelector('#whatsapp-nudge');
 const whatsappNudgeClose = document.querySelector('.whatsapp-nudge-close');
 const floatingWhatsApp = document.querySelector('.floating-whatsapp');
@@ -25,6 +27,13 @@ function setWhatsAppLinks() {
     const message = 'Hola Scenth Store, quería consultar por una fragancia del catálogo.';
     document.querySelectorAll('[data-whatsapp="general"]').forEach((link) => {
         link.href = whatsappUrl(message);
+        link.target = '_blank';
+        link.rel = 'noreferrer';
+    });
+
+    const orderMessage = 'Hola Scenth Store, busco un perfume que no está en stock y quería solicitar una cotización.';
+    document.querySelectorAll('[data-whatsapp="order"]').forEach((link) => {
+        link.href = whatsappUrl(orderMessage);
         link.target = '_blank';
         link.rel = 'noreferrer';
     });
@@ -115,6 +124,18 @@ function filteredProducts() {
 }
 
 function renderCatalog() {
+    const isOrderView = state.status === 'pedido';
+
+    orderPanel.hidden = !isOrderView;
+    searchRow.hidden = isOrderView;
+    catalogGrid.hidden = isOrderView;
+
+    if (isOrderView) {
+        emptyState.hidden = true;
+        catalogGrid.replaceChildren();
+        return;
+    }
+
     const visibleProducts = filteredProducts();
     catalogGrid.replaceChildren(...visibleProducts.map(buildProductCard));
     emptyState.hidden = visibleProducts.length > 0;

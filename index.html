@@ -16,9 +16,9 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&amp;family=Manrope:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css?v=20260810-7">
+    <link rel="stylesheet" href="styles.css?v=20260811-1">
     <script src="products.js?v=20260809-2" defer></script>
-    <script src="app.js?v=20260809-2" defer></script>
+    <script src="app.js?v=20260811-1" defer></script>
 </head>
 <body>
     <a class="skip-link" href="#catalogo">Ir al catálogo</a>
@@ -75,7 +75,7 @@
                     <p class="eyebrow">Selección Scenth</p>
                     <h2>Catálogo de fragancias</h2>
                 </div>
-                <p>Los productos disponibles muestran su precio. Las demás fragancias pueden solicitarse a pedido.</p>
+                <p>Los productos disponibles muestran su precio. Si buscás otra fragancia, podemos cotizarla especialmente para vos.</p>
             </div>
 
             <div class="catalog-tools">
@@ -103,6 +103,19 @@
                 </div>
             </div>
 
+            <section class="order-panel" id="order-panel" aria-labelledby="order-panel-title" hidden>
+                <div class="order-panel-copy">
+                    <p class="order-kicker">Próximamente</p>
+                    <h3 id="order-panel-title">¿Buscás un perfume que no está en stock?</h3>
+                    <p>Escribinos por WhatsApp y lo cotizamos especialmente para vos.</p>
+                    <p class="order-lead-time"><strong>Pedidos especiales:</strong> demora estimada de 7 a 10 días, sujeta a disponibilidad del proveedor.</p>
+                </div>
+                <a class="button order-whatsapp" data-whatsapp="order" href="#">
+                    <img src="images/whatsapp-icon-clean.png?v=20260810-1" alt="" aria-hidden="true" width="30" height="30">
+                    <span>Cotizar por WhatsApp</span>
+                </a>
+            </section>
+
             <div class="catalog-grid" id="catalog-grid" aria-live="polite"></div>
             <div class="empty-state" id="empty-state" hidden>
                 <p>No encontramos fragancias con esos filtros.</p>
@@ -126,7 +139,7 @@
                 <article class="info-card">
                     <span class="info-number">02</span>
                     <h3>Escribinos</h3>
-                    <p>Confirmamos disponibilidad, precio final y medios de pago por WhatsApp.</p>
+                    <p>Confirmamos disponibilidad, precio final y medios de pago por WhatsApp. Los pedidos especiales demoran aproximadamente de 7 a 10 días.</p>
                 </article>
                 <article class="info-card">
                     <span class="info-number">03</span>
