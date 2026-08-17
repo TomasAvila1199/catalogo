@@ -476,8 +476,12 @@ a {
     gap: 1.2rem;
 }
 
+.order-panel:not([hidden]) + .catalog-grid {
+    margin-top: 1.2rem;
+}
+
 .order-panel {
-    min-height: 330px;
+    min-height: 280px;
     margin-top: 2.2rem;
     padding: clamp(2rem, 5vw, 4.5rem);
     border: 1px solid var(--line);
@@ -527,7 +531,7 @@ a {
     max-width: 720px;
     margin: 0;
     font-family: var(--font-display);
-    font-size: clamp(2.5rem, 5vw, 4.6rem);
+    font-size: clamp(2.5rem, 5vw, 4.2rem);
     font-weight: 600;
     line-height: 0.96;
 }

@@ -143,11 +143,11 @@ if (!product) {
     highlightsContainer.hidden = highlights.length === 0;
 
     const price = document.querySelector('#detail-price');
-    price.textContent = isAvailable ? product.price : 'Precio al ingresar';
+    price.textContent = isAvailable ? product.price : 'Consultar precio';
     price.classList.toggle('order', !isAvailable);
 
     const buy = document.querySelector('#detail-buy');
-    buy.textContent = isAvailable ? 'Comprar por WhatsApp' : 'Consultar por WhatsApp';
+    buy.textContent = isAvailable ? 'Comprar por WhatsApp' : 'Cotizar por WhatsApp';
     setLink(buy, detailWhatsappUrl(purchaseMessage));
     setLink(document.querySelector('#header-whatsapp'), detailWhatsappUrl(consultationMessage));
     setLink(document.querySelector('#detail-contact-whatsapp'), detailWhatsappUrl(consultationMessage));

@@ -108,9 +108,9 @@ function buildProductCard(product) {
     badge.classList.toggle('available', isAvailable);
     meta.textContent = [product.brand, product.gender, product.volume].filter(Boolean).join(' · ');
     name.textContent = product.name;
-    price.textContent = isAvailable ? product.price : 'Precio al ingresar';
+    price.textContent = isAvailable ? product.price : 'Consultar precio';
     price.classList.toggle('order', !isAvailable);
-    action.textContent = isAvailable ? 'Comprar' : 'Consultar';
+    action.textContent = isAvailable ? 'Comprar' : 'Cotizar';
     action.href = whatsappUrl(
         isAvailable
             ? `Hola Scenth Store, quiero comprar ${product.brand} ${product.name}. ¿Sigue disponible?`
@@ -140,14 +140,8 @@ function renderCatalog() {
     const isOrderView = state.status === 'pedido';
 
     orderPanel.hidden = !isOrderView;
-    searchRow.hidden = isOrderView;
-    catalogGrid.hidden = isOrderView;
-
-    if (isOrderView) {
-        emptyState.hidden = true;
-        catalogGrid.replaceChildren();
-        return;
-    }
+    searchRow.hidden = false;
+    catalogGrid.hidden = false;
 
     const visibleProducts = filteredProducts();
     catalogGrid.replaceChildren(...visibleProducts.map(buildProductCard));
@@ -156,6 +150,7 @@ function renderCatalog() {
 
 function updateCounts() {
     document.querySelector('#available-count').textContent = products.filter((product) => product.status === 'disponible').length;
+    document.querySelector('#order-count').textContent = products.filter((product) => product.status === 'pedido').length;
 }
 
 statusTabs.forEach((tab) => {

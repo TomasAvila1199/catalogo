@@ -315,5 +315,205 @@ window.CATALOG_PRODUCTS = [
         price: '$90.000',
         image: 'images/khamrah-waha.jpg',
         reference: ''
+    },
+    {
+        name: 'Sauvage Eau de Parfum',
+        brand: 'Dior',
+        gender: 'masculino',
+        volume: '100 ml',
+        status: 'pedido',
+        price: null,
+        image: 'images/pedido/dior-sauvage.jpg',
+        reference: ''
+    },
+    {
+        name: 'Bleu de Chanel Eau de Parfum',
+        brand: 'Chanel',
+        gender: 'masculino',
+        volume: '100 ml',
+        status: 'pedido',
+        price: null,
+        image: 'images/pedido/bleu-de-chanel.jpg',
+        reference: ''
+    },
+    {
+        name: 'Y Eau de Parfum',
+        brand: 'Yves Saint Laurent',
+        gender: 'masculino',
+        volume: '100 ml',
+        status: 'pedido',
+        price: null,
+        image: 'images/pedido/ysl-y.jpg',
+        reference: ''
+    },
+    {
+        name: 'Acqua di Giò Profondo Eau de Parfum',
+        brand: 'Giorgio Armani',
+        gender: 'masculino',
+        volume: '100 ml',
+        status: 'pedido',
+        price: null,
+        image: 'images/pedido/acqua-di-gio-profondo.jpg',
+        reference: ''
+    },
+    {
+        name: 'Le Male Elixir',
+        brand: 'Jean Paul Gaultier',
+        gender: 'masculino',
+        volume: '125 ml',
+        status: 'pedido',
+        price: null,
+        image: 'images/pedido/le-male-elixir.jpg',
+        reference: ''
+    },
+    {
+        name: 'Eros Eau de Parfum',
+        brand: 'Versace',
+        gender: 'masculino',
+        volume: '100 ml',
+        status: 'pedido',
+        price: null,
+        image: 'images/pedido/versace-eros.jpg',
+        reference: ''
+    },
+    {
+        name: '1 Million Eau de Toilette',
+        brand: 'Rabanne',
+        gender: 'masculino',
+        volume: '100 ml',
+        status: 'pedido',
+        price: null,
+        image: 'images/pedido/one-million.jpg',
+        reference: ''
+    },
+    {
+        name: 'Uomo Born in Roma Intense',
+        brand: 'Valentino',
+        gender: 'masculino',
+        volume: '100 ml',
+        status: 'pedido',
+        price: null,
+        image: 'images/pedido/valentino-uomo-intense.jpg',
+        reference: ''
+    },
+    {
+        name: 'Bad Boy Cobalt Eau de Parfum Électrique',
+        brand: 'Carolina Herrera',
+        gender: 'masculino',
+        volume: '100 ml',
+        status: 'pedido',
+        price: null,
+        image: 'images/pedido/bad-boy-cobalt.jpg',
+        reference: ''
+    },
+    {
+        name: 'Stronger With You Intensely',
+        brand: 'Emporio Armani',
+        gender: 'masculino',
+        volume: '100 ml',
+        status: 'pedido',
+        price: null,
+        image: 'images/pedido/stronger-with-you-intensely.jpg',
+        reference: ''
+    },
+    {
+        name: 'Good Girl Eau de Parfum',
+        brand: 'Carolina Herrera',
+        gender: 'femenino',
+        volume: '80 ml',
+        status: 'pedido',
+        price: null,
+        image: 'images/pedido/good-girl.jpg',
+        reference: ''
+    },
+    {
+        name: 'Libre Eau de Parfum',
+        brand: 'Yves Saint Laurent',
+        gender: 'femenino',
+        volume: '90 ml',
+        status: 'pedido',
+        price: null,
+        image: 'images/pedido/ysl-libre.jpg',
+        reference: ''
+    },
+    {
+        name: 'La Vie Est Belle Eau de Parfum',
+        brand: 'Lancôme',
+        gender: 'femenino',
+        volume: '100 ml',
+        status: 'pedido',
+        price: null,
+        image: 'images/pedido/la-vie-est-belle.jpg',
+        reference: ''
+    },
+    {
+        name: "J'adore Eau de Parfum",
+        brand: 'Dior',
+        gender: 'femenino',
+        volume: '100 ml',
+        status: 'pedido',
+        price: null,
+        image: 'images/pedido/dior-jadore.jpg',
+        reference: ''
+    },
+    {
+        name: 'My Way Eau de Parfum',
+        brand: 'Giorgio Armani',
+        gender: 'femenino',
+        volume: '90 ml',
+        status: 'pedido',
+        price: null,
+        image: 'images/pedido/armani-my-way.jpg',
+        reference: ''
+    },
+    {
+        name: 'Paradoxe Eau de Parfum',
+        brand: 'Prada',
+        gender: 'femenino',
+        volume: '90 ml',
+        status: 'pedido',
+        price: null,
+        image: 'images/pedido/prada-paradoxe.jpg',
+        reference: ''
+    },
+    {
+        name: 'Donna Born in Roma Eau de Parfum',
+        brand: 'Valentino',
+        gender: 'femenino',
+        volume: '100 ml',
+        status: 'pedido',
+        price: null,
+        image: 'images/pedido/valentino-donna.jpg',
+        reference: ''
+    },
+    {
+        name: 'Alien Eau de Parfum',
+        brand: 'Mugler',
+        gender: 'femenino',
+        volume: '90 ml',
+        status: 'pedido',
+        price: null,
+        image: 'images/pedido/mugler-alien.jpg',
+        reference: ''
+    },
+    {
+        name: 'Black Opium Eau de Parfum',
+        brand: 'Yves Saint Laurent',
+        gender: 'femenino',
+        volume: '90 ml',
+        status: 'pedido',
+        price: null,
+        image: 'images/pedido/black-opium.jpg',
+        reference: ''
+    },
+    {
+        name: 'Coco Mademoiselle Eau de Parfum',
+        brand: 'Chanel',
+        gender: 'femenino',
+        volume: '100 ml',
+        status: 'pedido',
+        price: null,
+        image: 'images/pedido/coco-mademoiselle.jpg',
+        reference: ''
     }
 ];
