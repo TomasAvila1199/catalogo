@@ -317,6 +317,66 @@ window.CATALOG_PRODUCTS = [
         reference: ''
     },
     {
+        name: 'Hawas Fire',
+        brand: 'Rasasi',
+        gender: 'masculino',
+        volume: '100 ml',
+        status: 'disponible',
+        price: '$69.000',
+        image: 'images/rasasi-hawas-fire-logo.jpg',
+        reference: ''
+    },
+    {
+        name: 'Hawas Kobra',
+        brand: 'Rasasi',
+        gender: 'masculino',
+        volume: '100 ml',
+        status: 'disponible',
+        price: '$69.000',
+        image: 'images/rasasi-hawas-kobra-logo.jpg',
+        reference: ''
+    },
+    {
+        name: 'Odyssey Aqua',
+        brand: 'Armaf',
+        gender: 'masculino',
+        volume: '100 ml',
+        status: 'disponible',
+        price: '$59.000',
+        image: 'images/armaf-odyssey-aqua-logo.jpg',
+        reference: ''
+    },
+    {
+        name: 'Tropical Vibe',
+        brand: 'Rayhaan',
+        gender: 'unisex',
+        volume: '100 ml',
+        status: 'disponible',
+        price: '$67.000',
+        image: 'images/rayhaan-tropical-vibe-logo.jpg',
+        reference: ''
+    },
+    {
+        name: 'Atlas',
+        brand: 'Lattafa',
+        gender: 'unisex',
+        volume: '55 ml',
+        status: 'disponible',
+        price: '$59.000',
+        image: 'images/lattafa-atlas-logo.jpg',
+        reference: ''
+    },
+    {
+        name: 'Asad Elixir',
+        brand: 'Lattafa',
+        gender: 'masculino',
+        volume: '100 ml',
+        status: 'disponible',
+        price: '$63.000',
+        image: 'images/lattafa-asad-elixir-logo.jpg',
+        reference: ''
+    },
+    {
         name: 'Sauvage Eau de Parfum',
         brand: 'Dior',
         gender: 'masculino',
