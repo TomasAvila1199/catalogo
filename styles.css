@@ -1253,20 +1253,7 @@ a {
 }
 
 .detail-slide figcaption {
-    position: absolute;
-    left: 50%;
-    bottom: 1rem;
-    transform: translateX(-50%);
-    min-width: max-content;
-    padding: 0.55rem 0.8rem;
-    border: 1px solid rgba(214, 170, 73, 0.38);
-    background: rgba(9, 9, 9, 0.84);
-    color: var(--gold-light);
-    font-size: 0.68rem;
-    font-weight: 700;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    backdrop-filter: blur(12px);
+    display: none;
 }
 
 .carousel-arrow {
