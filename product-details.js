@@ -55,7 +55,7 @@ window.CATALOG_DETAILS = {
         description: 'Una composición cítrica, aromática y amaderada con sensación fresca y luminosa. Dunescape equilibra energía, elegancia y versatilidad para acompañar especialmente días cálidos.',
         highlights: ['Cítrico', 'Aromático', 'Amaderado'],
         gallery: [
-            { src: 'images/detalles/armaf-dunescape/render.jpg', label: 'Render del producto' },
+            { src: 'images/detalles/armaf-dunescape/render.jpg', label: 'Foto del producto' },
             { src: 'images/detalles/armaf-dunescape/notas.jpg', label: 'Notas olfativas' },
             { src: 'images/detalles/armaf-dunescape/inspiracion.jpg', label: 'Inspiración olfativa' }
         ]
@@ -64,7 +64,7 @@ window.CATALOG_DETAILS = {
         description: 'Mandarin Sky Vintage combina una apertura cítrica con un corazón especiado y floral, apoyado sobre un fondo amaderado y ambarado. Una propuesta cálida, moderna y de carácter envolvente.',
         highlights: ['Mandarina', 'Especias', 'Ámbar'],
         gallery: [
-            { src: 'images/detalles/armaf-odyssey-mandarin-sky-vintage/render.jpg', label: 'Render del producto' },
+            { src: 'images/detalles/armaf-odyssey-mandarin-sky-vintage/render.jpg', label: 'Foto del producto' },
             { src: 'images/detalles/armaf-odyssey-mandarin-sky-vintage/notas.jpg', label: 'Notas olfativas' },
             { src: 'images/detalles/armaf-odyssey-mandarin-sky-vintage/inspiracion.jpg', label: 'Inspiración olfativa' }
         ]
@@ -73,7 +73,7 @@ window.CATALOG_DETAILS = {
         description: 'Dulce, especiado y envolvente, Italia combina miel, canela, tabaco y vainilla con una salida aromática y cítrica. Una fragancia elegante y cálida, ideal para climas frescos.',
         highlights: ['Miel', 'Canela', 'Tabaco'],
         gallery: [
-            { src: 'images/detalles/rayhaan-italia/render.jpg', label: 'Render del producto' },
+            { src: 'images/detalles/rayhaan-italia/render.jpg', label: 'Foto del producto' },
             { src: 'images/detalles/rayhaan-italia/notas.jpg', label: 'Notas olfativas' },
             { src: 'images/detalles/rayhaan-italia/inspiracion.jpg', label: 'Inspiración olfativa' }
         ]
@@ -82,7 +82,7 @@ window.CATALOG_DETAILS = {
         description: 'Un perfil dulce, especiado y profundo que une azúcar, azafrán, rosa, oud y haba tonka. Momento tiene una presencia intensa y envolvente, pensada para la noche y los días más frescos.',
         highlights: ['Dulce', 'Especiado', 'Oud'],
         gallery: [
-            { src: 'images/detalles/riiffs-momento/render.jpg', label: 'Render del producto' },
+            { src: 'images/detalles/riiffs-momento/render.jpg', label: 'Foto del producto' },
             { src: 'images/detalles/riiffs-momento/notas.jpg', label: 'Notas olfativas' },
             { src: 'images/detalles/riiffs-momento/inspiracion.jpg', label: 'Inspiración olfativa' }
         ]
@@ -91,7 +91,7 @@ window.CATALOG_DETAILS = {
         description: 'Fresco, aromático y amaderado, Nocturno Elixir abre con cítricos y menta, incorpora lavanda y geranio, y descansa sobre un fondo limpio de sándalo. Versátil para el día o la noche.',
         highlights: ['Fresco', 'Aromático', 'Amaderado'],
         gallery: [
-            { src: 'images/detalles/rayhaan-nocturno-elixir/render.jpg', label: 'Render del producto' },
+            { src: 'images/detalles/rayhaan-nocturno-elixir/render.jpg', label: 'Foto del producto' },
             { src: 'images/detalles/rayhaan-nocturno-elixir/notas.jpg', label: 'Notas olfativas' },
             { src: 'images/detalles/rayhaan-nocturno-elixir/inspiracion.jpg', label: 'Inspiración olfativa' }
         ]
@@ -100,7 +100,7 @@ window.CATALOG_DETAILS = {
         description: 'Crimson presenta un perfil cálido, especiado y balsámico, con canela, pimienta rosa, cardamomo, pachulí, benjuí, tonka y vainilla. Una opción intensa y sofisticada para momentos especiales.',
         highlights: ['Especiado', 'Balsámico', 'Cálido'],
         gallery: [
-            { src: 'images/detalles/rayhaan-crimson/render.jpg', label: 'Render del producto' },
+            { src: 'images/detalles/rayhaan-crimson/render.jpg', label: 'Foto del producto' },
             { src: 'images/detalles/rayhaan-crimson/notas.jpg', label: 'Notas olfativas' },
             { src: 'images/detalles/rayhaan-crimson/inspiracion.jpg', label: 'Inspiración olfativa' }
         ]
@@ -109,7 +109,7 @@ window.CATALOG_DETAILS = {
         description: 'Khamrah Waha es una propuesta envolvente y moderna que combina frescura con una base dulce y cálida. Su presentación turquesa mantiene el carácter sofisticado de la colección Khamrah.',
         highlights: ['Fresco', 'Dulce', 'Envolvente'],
         gallery: [
-            { src: 'images/detalles/lattafa-khamrah-waha/render.jpg', label: 'Render del producto' },
+            { src: 'images/detalles/lattafa-khamrah-waha/render.jpg', label: 'Foto del producto' },
             { src: 'images/detalles/lattafa-khamrah-waha/notas.jpg', label: 'Notas olfativas' }
         ]
     }
