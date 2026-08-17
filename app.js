@@ -56,6 +56,16 @@ function normalize(value) {
         .toLowerCase();
 }
 
+function slugify(value) {
+    return normalize(value)
+        .replace(/[^a-z0-9]+/g, '-')
+        .replace(/^-|-$/g, '');
+}
+
+function productDetailUrl(product) {
+    return `producto.html?producto=${encodeURIComponent(slugify(`${product.brand}-${product.name}`))}`;
+}
+
 function getInitials(product) {
     const words = `${product.brand} ${product.name}`.trim().split(/\s+/);
     return words.slice(0, 2).map((word) => word[0]).join('').toUpperCase();
@@ -79,6 +89,7 @@ function buildProductCard(product) {
     const name = card.querySelector('.product-name');
     const price = card.querySelector('.product-price');
     const action = card.querySelector('.product-action');
+    const detailLink = card.querySelector('.product-detail-hitarea');
 
     if (product.image) {
         image.src = product.image;
@@ -107,6 +118,8 @@ function buildProductCard(product) {
     );
     action.target = '_blank';
     action.rel = 'noreferrer';
+    detailLink.href = productDetailUrl(product);
+    detailLink.setAttribute('aria-label', `Ver detalles de ${product.brand} ${product.name}`);
 
     return card;
 }

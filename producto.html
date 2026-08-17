@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Conocé todos los detalles de esta fragancia en Scenth Store.">
+    <meta name="theme-color" content="#090909">
+    <meta name="application-name" content="Scenth Store">
+    <meta name="apple-mobile-web-app-title" content="Scenth Store">
+    <title>Detalle de fragancia | Scenth Store</title>
+    <link rel="icon" href="/favicon-safari-v6.ico?v=20260810-1" sizes="16x16 32x32" type="image/x-icon">
+    <link rel="apple-touch-icon" sizes="180x180" href="https://scenth.store/apple-touch-icon-v5.png?v=20260810-1">
+    <link rel="mask-icon" href="https://scenth.store/safari-pinned-tab-v4.svg?v=20260810-1" color="#d5a016">
+    <link rel="manifest" href="/site-v5.webmanifest">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&amp;family=Manrope:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css?v=20260817-1">
+    <script src="products.js?v=20260809-2" defer></script>
+    <script src="product-details.js?v=20260817-1" defer></script>
+    <script src="product-detail.js?v=20260817-1" defer></script>
+</head>
+<body class="product-page">
+    <a class="skip-link" href="#detalle">Ir al detalle</a>
+
+    <header class="site-header">
+        <a class="brand" href="index.html" aria-label="Scenth Store, inicio">
+            <img src="images/scenth-store-logo.png" alt="Scenth Store">
+        </a>
+        <nav class="header-links" aria-label="Navegación principal">
+            <a href="index.html#catalogo">Catálogo</a>
+            <a href="index.html#como-comprar">Cómo comprar</a>
+        </nav>
+        <a class="button button-small header-whatsapp" id="header-whatsapp" href="#">
+            <img src="images/whatsapp-icon-clean.png?v=20260810-1" alt="" aria-hidden="true" width="24" height="24">
+            <span>WhatsApp</span>
+        </a>
+    </header>
+
+    <main id="detalle">
+        <div class="product-breadcrumb">
+            <a href="index.html#catalogo" aria-label="Volver al catálogo">← Volver al catálogo</a>
+        </div>
+
+        <section class="detail-hero" id="detail-content" hidden>
+            <div class="detail-product-visual">
+                <img id="detail-image" alt="">
+                <span class="stock-badge detail-stock" id="detail-stock"></span>
+            </div>
+            <div class="detail-copy">
+                <p class="eyebrow" id="detail-brand"></p>
+                <h1 id="detail-name"></h1>
+                <div class="detail-facts" id="detail-facts"></div>
+                <p class="detail-description" id="detail-description"></p>
+                <div class="detail-highlights" id="detail-highlights"></div>
+                <div class="detail-purchase">
+                    <p class="detail-price" id="detail-price"></p>
+                    <a class="button detail-buy" id="detail-buy" href="#">Comprar por WhatsApp</a>
+                </div>
+            </div>
+        </section>
+
+        <section class="detail-gallery-section" id="detail-gallery-section" hidden>
+            <div class="detail-section-heading">
+                <p class="eyebrow">Conocé la fragancia</p>
+                <h2>Presentación, notas e inspiración</h2>
+                <p>Deslizá o elegí una imagen para ver cada detalle.</p>
+            </div>
+            <div class="detail-carousel" aria-roledescription="carrusel">
+                <div class="detail-stage">
+                    <button class="carousel-arrow previous" id="gallery-previous" type="button" aria-label="Imagen anterior">←</button>
+                    <figure class="detail-slide">
+                        <img id="gallery-image" alt="">
+                        <figcaption id="gallery-caption"></figcaption>
+                    </figure>
+                    <button class="carousel-arrow next" id="gallery-next" type="button" aria-label="Imagen siguiente">→</button>
+                </div>
+                <div class="detail-thumbnails" id="gallery-thumbnails" role="tablist" aria-label="Imágenes de la fragancia"></div>
+            </div>
+        </section>
+
+        <section class="detail-missing" id="detail-missing" hidden>
+            <p class="eyebrow">Scenth Store</p>
+            <h1>No encontramos esta fragancia.</h1>
+            <p>Puede que el enlace esté incompleto o que el producto ya no forme parte del catálogo.</p>
+            <a class="button" href="index.html#catalogo">Volver al catálogo</a>
+        </section>
+
+        <section class="contact-banner detail-contact" id="detail-contact" hidden>
+            <div>
+                <p class="eyebrow">Atención personalizada</p>
+                <h2>¿Querés saber si es para vos?</h2>
+                <p>Contanos qué perfumes usás o qué tipo de aroma buscás y te orientamos por WhatsApp.</p>
+            </div>
+            <a class="button" id="detail-contact-whatsapp" href="#">Consultar</a>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div>
+            <strong>Scenth Store</strong>
+            <p>Perfumes originales en Rosario.</p>
+            <p class="footer-legal">© 2026 Scenth Store. Todos los derechos reservados.</p>
+            <p class="footer-credit">Diseñado y desarrollado por <span>Tomás Ávila</span>.</p>
+        </div>
+        <div class="footer-links">
+            <a href="https://instagram.com/scenth.store" target="_blank" rel="noreferrer">Instagram · @scenth.store</a>
+            <a id="footer-whatsapp" href="#">WhatsApp · 341 576-3811</a>
+        </div>
+    </footer>
+</body>
+</html>
