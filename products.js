@@ -515,5 +515,115 @@ window.CATALOG_PRODUCTS = [
         price: null,
         image: 'images/pedido/coco-mademoiselle.jpg',
         reference: ''
+    },
+    {
+        name: 'Aventus Eau de Parfum',
+        brand: 'Creed',
+        gender: 'masculino',
+        volume: '100 ml',
+        status: 'pedido',
+        price: null,
+        image: 'images/pedido/creed-aventus.jpg',
+        reference: ''
+    },
+    {
+        name: 'Imagination Eau de Parfum',
+        brand: 'Louis Vuitton',
+        gender: 'masculino',
+        volume: '100 ml',
+        status: 'pedido',
+        price: null,
+        image: 'images/pedido/louis-vuitton-imagination.jpg',
+        reference: ''
+    },
+    {
+        name: 'Layton Eau de Parfum',
+        brand: 'Parfums de Marly',
+        gender: 'masculino',
+        volume: '125 ml',
+        status: 'pedido',
+        price: null,
+        image: 'images/pedido/parfums-de-marly-layton.jpg',
+        reference: ''
+    },
+    {
+        name: 'Baccarat Rouge 540 Eau de Parfum',
+        brand: 'Maison Francis Kurkdjian',
+        gender: 'unisex',
+        volume: '70 ml',
+        status: 'pedido',
+        price: null,
+        image: 'images/pedido/baccarat-rouge-540.jpg',
+        reference: ''
+    },
+    {
+        name: "Angels' Share Eau de Parfum",
+        brand: 'Kilian',
+        gender: 'unisex',
+        volume: '50 ml',
+        status: 'pedido',
+        price: null,
+        image: 'images/pedido/kilian-angels-share.jpg',
+        reference: ''
+    },
+    {
+        name: 'Delina Eau de Parfum',
+        brand: 'Parfums de Marly',
+        gender: 'femenino',
+        volume: '75 ml',
+        status: 'pedido',
+        price: null,
+        image: 'images/pedido/parfums-de-marly-delina.jpg',
+        reference: ''
+    },
+    {
+        name: 'Naxos Eau de Parfum',
+        brand: 'Xerjoff',
+        gender: 'unisex',
+        volume: '100 ml',
+        status: 'pedido',
+        price: null,
+        image: 'images/pedido/xerjoff-naxos.jpg',
+        reference: ''
+    },
+    {
+        name: 'Oud Wood Eau de Parfum',
+        brand: 'Tom Ford',
+        gender: 'unisex',
+        volume: '100 ml',
+        status: 'pedido',
+        price: null,
+        image: 'images/pedido/tom-ford-oud-wood.jpg',
+        reference: ''
+    },
+    {
+        name: 'Santal 33 Eau de Parfum',
+        brand: 'Le Labo',
+        gender: 'unisex',
+        volume: '100 ml',
+        status: 'pedido',
+        price: null,
+        image: 'images/pedido/le-labo-santal-33.jpg',
+        reference: ''
+    },
+    {
+        name: 'Her Eau de Parfum',
+        brand: 'Burberry',
+        gender: 'femenino',
+        volume: '100 ml',
+        status: 'pedido',
+        price: null,
+        image: 'images/pedido/burberry-her.jpg',
+        reference: ''
+    },
+    {
+        name: 'Erba Pura Eau de Parfum',
+        brand: 'Xerjoff',
+        gender: 'unisex',
+        volume: '100 ml',
+        status: 'pedido',
+        price: null,
+        image: 'images/pedido/xerjoff-erba-pura.jpg',
+        reference: ''
     }
 ];

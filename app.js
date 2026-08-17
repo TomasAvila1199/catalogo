@@ -148,11 +148,6 @@ function renderCatalog() {
     emptyState.hidden = visibleProducts.length > 0;
 }
 
-function updateCounts() {
-    document.querySelector('#available-count').textContent = products.filter((product) => product.status === 'disponible').length;
-    document.querySelector('#order-count').textContent = products.filter((product) => product.status === 'pedido').length;
-}
-
 statusTabs.forEach((tab) => {
     tab.addEventListener('click', () => {
         state.status = tab.dataset.status;
@@ -183,5 +178,4 @@ document.querySelector('#clear-filters').addEventListener('click', () => {
 
 setWhatsAppLinks();
 setupWhatsAppNudge();
-updateCounts();
 renderCatalog();
