@@ -12,7 +12,7 @@ window.CATALOG_PRODUCTS = [
         gender: 'unisex',
         volume: '120 ml',
         status: 'disponible',
-        price: '$90.000',
+        price: '$94.000',
         image: 'images/al-haramain-amber-oud-gold-edition-logo.jpg',
         reference: ''
     },
@@ -22,7 +22,7 @@ window.CATALOG_PRODUCTS = [
         gender: 'unisex',
         volume: '100 ml',
         status: 'disponible',
-        price: '$90.000',
+        price: '$94.000',
         image: 'images/al-haramain-aqua-dubai-logo.jpg',
         reference: ''
     },
@@ -32,7 +32,7 @@ window.CATALOG_PRODUCTS = [
         gender: 'unisex',
         volume: '100 ml',
         status: 'disponible',
-        price: '$88.000',
+        price: '$84.000',
         image: 'images/afnan-9pm-night-out-logo.jpg',
         reference: ''
     },
@@ -102,7 +102,7 @@ window.CATALOG_PRODUCTS = [
         gender: 'masculino',
         volume: '100 ml',
         status: 'disponible',
-        price: '$90.000',
+        price: '$94.000',
         image: 'images/bharara-king-logo.jpg',
         reference: ''
     },
@@ -252,7 +252,7 @@ window.CATALOG_PRODUCTS = [
         gender: 'masculino',
         volume: '100 ml',
         status: 'disponible',
-        price: '$90.000',
+        price: '$94.000',
         image: 'images/rayhaan-italia.jpg',
         reference: 'Inspirado en Xerjoff Naxos'
     },
