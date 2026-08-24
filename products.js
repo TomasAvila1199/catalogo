@@ -323,7 +323,7 @@ window.CATALOG_PRODUCTS = [
         volume: '100 ml',
         status: 'disponible',
         price: '$69.000',
-        image: 'images/rasasi-hawas-fire-logo.jpg',
+        image: 'images/rasasi-hawas-fire-logo.jpg?v=20260823-3',
         reference: ''
     },
     {
@@ -343,7 +343,7 @@ window.CATALOG_PRODUCTS = [
         volume: '100 ml',
         status: 'disponible',
         price: '$59.000',
-        image: 'images/armaf-odyssey-aqua-logo.jpg',
+        image: 'images/armaf-odyssey-aqua-logo.jpg?v=20260823-3',
         reference: ''
     },
     {
@@ -353,7 +353,7 @@ window.CATALOG_PRODUCTS = [
         volume: '100 ml',
         status: 'disponible',
         price: '$67.000',
-        image: 'images/rayhaan-tropical-vibe-logo.jpg',
+        image: 'images/rayhaan-tropical-vibe-logo.jpg?v=20260823-3',
         reference: ''
     },
     {
@@ -363,7 +363,7 @@ window.CATALOG_PRODUCTS = [
         volume: '55 ml',
         status: 'disponible',
         price: '$59.000',
-        image: 'images/lattafa-atlas-logo.jpg',
+        image: 'images/lattafa-atlas-logo.jpg?v=20260823-3',
         reference: ''
     },
     {

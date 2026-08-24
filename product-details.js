@@ -154,10 +154,11 @@ const GENERATED_DETAIL_GALLERIES = {
     'rasasi-hawas-fire': true,
     'rasasi-hawas-kobra': true,
     'rayhaan-tropical-vibe': true,
-    'lattafa-atlas': true
+    'lattafa-atlas': true,
+    'lattafa-asad-elixir': true
 };
 
-const GENERATED_ASSET_VERSION = '20260823-2';
+const GENERATED_ASSET_VERSION = '20260823-3';
 
 Object.entries(GENERATED_DETAIL_GALLERIES).forEach(([slug, hasAlternative]) => {
     const current = window.CATALOG_DETAILS[slug] || {};
@@ -173,6 +174,16 @@ Object.entries(GENERATED_DETAIL_GALLERIES).forEach(([slug, hasAlternative]) => {
 
     window.CATALOG_DETAILS[slug] = { ...current, gallery };
 });
+
+window.CATALOG_DETAILS['armaf-odyssey-aqua'] = {
+    ...(window.CATALOG_DETAILS['armaf-odyssey-aqua'] || {}),
+    gallery: [
+        {
+            src: `images/detalles/armaf-odyssey-aqua/foto-nueva.jpg?v=${GENERATED_ASSET_VERSION}`,
+            label: 'Foto del producto'
+        }
+    ]
+};
 
 window.CATALOG_DETAILS['lattafa-fakhar-rose'] = {
     ...(window.CATALOG_DETAILS['lattafa-fakhar-rose'] || {}),
