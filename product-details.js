@@ -157,16 +157,18 @@ const GENERATED_DETAIL_GALLERIES = {
     'lattafa-atlas': true
 };
 
+const GENERATED_ASSET_VERSION = '20260823-2';
+
 Object.entries(GENERATED_DETAIL_GALLERIES).forEach(([slug, hasAlternative]) => {
     const current = window.CATALOG_DETAILS[slug] || {};
     const base = `images/detalles/${slug}`;
     const gallery = [
-        { src: `${base}/foto-nueva.jpg`, label: 'Foto del producto' },
-        { src: `${base}/notas-nuevas.jpg`, label: 'Notas olfativas' }
+        { src: `${base}/foto-nueva.jpg?v=${GENERATED_ASSET_VERSION}`, label: 'Foto del producto' },
+        { src: `${base}/notas-nuevas.jpg?v=${GENERATED_ASSET_VERSION}`, label: 'Notas olfativas' }
     ];
 
     if (hasAlternative) {
-        gallery.push({ src: `${base}/alternativa-nueva.jpg`, label: 'Alternativa olfativa' });
+        gallery.push({ src: `${base}/alternativa-nueva.jpg?v=${GENERATED_ASSET_VERSION}`, label: 'Alternativa olfativa' });
     }
 
     window.CATALOG_DETAILS[slug] = { ...current, gallery };
