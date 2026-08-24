@@ -114,3 +114,70 @@ window.CATALOG_DETAILS = {
         ]
     }
 };
+
+/*
+ * Galerías renovadas con las placas finales 1080 × 1350.
+ * Estas definiciones reemplazan las imágenes anteriores sin perder
+ * las descripciones y destacados ya cargados en cada ficha.
+ */
+const GENERATED_DETAIL_GALLERIES = {
+    'al-haramain-amber-oud-gold-edition': true,
+    'al-haramain-amber-oud-aqua-dubai': true,
+    'afnan-9-pm-night-out': true,
+    'afnan-9-am-dive': true,
+    'afnan-9-pm-elixir': true,
+    'afnan-9-pm-rebel': true,
+    'armaf-club-de-nuit-intense-man': true,
+    'armaf-odyssey-mandarin-sky': true,
+    'armaf-odyssey-mandarin-sky-vintage': true,
+    'bharara-king-edp': true,
+    'french-avenue-vulcan-feu': true,
+    'asdaaf-ameerat-al-arab': false,
+    'lattafa-art-of-universe': true,
+    'lattafa-vintage-radio': true,
+    'lattafa-badee-al-oud-honor-glory': true,
+    'lattafa-eclaire': true,
+    'lattafa-khamrah-qahwa': true,
+    'maison-alhambra-sceptre-malachite': true,
+    'maison-alhambra-jean-lowe-vibes': true,
+    'rasasi-hawas-black': true,
+    'rasasi-hawas-ice': true,
+    'rasasi-hawas-verde': true,
+    'rasasi-hawas-elixir': true,
+    'rayhaan-italia': true,
+    'riiffs-momento': true,
+    'armaf-dunescape': true,
+    'rayhaan-nocturno-elixir': true,
+    'rayhaan-crimson': true,
+    'dumont-nitro-red': true,
+    'lattafa-khamrah-waha': false,
+    'rasasi-hawas-fire': true,
+    'rasasi-hawas-kobra': true,
+    'rayhaan-tropical-vibe': true,
+    'lattafa-atlas': true
+};
+
+Object.entries(GENERATED_DETAIL_GALLERIES).forEach(([slug, hasAlternative]) => {
+    const current = window.CATALOG_DETAILS[slug] || {};
+    const base = `images/detalles/${slug}`;
+    const gallery = [
+        { src: `${base}/foto-nueva.jpg`, label: 'Foto del producto' },
+        { src: `${base}/notas-nuevas.jpg`, label: 'Notas olfativas' }
+    ];
+
+    if (hasAlternative) {
+        gallery.push({ src: `${base}/alternativa-nueva.jpg`, label: 'Alternativa olfativa' });
+    }
+
+    window.CATALOG_DETAILS[slug] = { ...current, gallery };
+});
+
+window.CATALOG_DETAILS['lattafa-fakhar-rose'] = {
+    ...(window.CATALOG_DETAILS['lattafa-fakhar-rose'] || {}),
+    gallery: [
+        {
+            src: 'images/detalles/lattafa-fakhar-rose/foto-nueva.jpg',
+            label: 'Foto del producto'
+        }
+    ]
+};
