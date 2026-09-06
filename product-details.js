@@ -135,6 +135,7 @@ const GENERATED_DETAIL_GALLERIES = {
     'armaf-club-de-nuit-intense-man': true,
     'armaf-odyssey-mandarin-sky': true,
     'armaf-odyssey-mandarin-sky-vintage': true,
+    'armaf-odyssey-aqua': true,
     'bharara-king-edp': true,
     'french-avenue-vulcan-feu': true,
     'asdaaf-ameerat-al-arab': false,
@@ -164,7 +165,7 @@ const GENERATED_DETAIL_GALLERIES = {
     'afnan-turathi-blue': true
 };
 
-const GENERATED_ASSET_VERSION = '20260905-1';
+const GENERATED_ASSET_VERSION = '20260906-1';
 
 Object.entries(GENERATED_DETAIL_GALLERIES).forEach(([slug, hasAlternative]) => {
     const current = window.CATALOG_DETAILS[slug] || {};
@@ -186,6 +187,7 @@ const UPDATED_PRODUCT_COVERS = [
     'al-haramain-amber-oud-aqua-dubai',
     'afnan-9-pm-rebel',
     'afnan-turathi-blue',
+    'armaf-odyssey-aqua',
     'bharara-king-edp',
     'lattafa-khamrah-waha',
     'rasasi-hawas-kobra'
@@ -199,16 +201,6 @@ UPDATED_PRODUCT_COVERS.forEach((slug) => {
         label: 'Presentación'
     });
 });
-
-window.CATALOG_DETAILS['armaf-odyssey-aqua'] = {
-    ...(window.CATALOG_DETAILS['armaf-odyssey-aqua'] || {}),
-    gallery: [
-        {
-            src: `images/detalles/armaf-odyssey-aqua/foto-nueva.jpg?v=${GENERATED_ASSET_VERSION}`,
-            label: 'Foto del producto'
-        }
-    ]
-};
 
 window.CATALOG_DETAILS['lattafa-fakhar-rose'] = {
     ...(window.CATALOG_DETAILS['lattafa-fakhar-rose'] || {}),
