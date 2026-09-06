@@ -6,6 +6,11 @@
  * { src: 'images/detalles/carpeta/archivo.jpg', label: 'Notas olfativas' }
  */
 window.CATALOG_DETAILS = {
+    'afnan-turathi-blue': {
+        description: 'Turathi Blue combina una apertura cítrica intensa con un corazón especiado y un fondo amaderado, ambarado y almizclado. Una fragancia fresca, elegante y de gran presencia, inspirada en el perfil de Bvlgari Tygar.',
+        highlights: ['Cítrico', 'Fresco', 'Amaderado'],
+        gallery: []
+    },
     'afnan-9-am-dive': {
         description: 'Una propuesta fresca, cítrica y acuática, con un fondo amaderado limpio. 9 AM Dive combina energía, versatilidad y un perfil moderno que funciona especialmente bien durante el día y en climas cálidos.',
         highlights: ['Fresco', 'Cítrico', 'Acuático'],
@@ -155,10 +160,11 @@ const GENERATED_DETAIL_GALLERIES = {
     'rasasi-hawas-kobra': true,
     'rayhaan-tropical-vibe': true,
     'lattafa-atlas': true,
-    'lattafa-asad-elixir': true
+    'lattafa-asad-elixir': true,
+    'afnan-turathi-blue': true
 };
 
-const GENERATED_ASSET_VERSION = '20260823-3';
+const GENERATED_ASSET_VERSION = '20260905-1';
 
 Object.entries(GENERATED_DETAIL_GALLERIES).forEach(([slug, hasAlternative]) => {
     const current = window.CATALOG_DETAILS[slug] || {};
@@ -173,6 +179,25 @@ Object.entries(GENERATED_DETAIL_GALLERIES).forEach(([slug, hasAlternative]) => {
     }
 
     window.CATALOG_DETAILS[slug] = { ...current, gallery };
+});
+
+const UPDATED_PRODUCT_COVERS = [
+    'al-haramain-amber-oud-gold-edition',
+    'al-haramain-amber-oud-aqua-dubai',
+    'afnan-9-pm-rebel',
+    'afnan-turathi-blue',
+    'bharara-king-edp',
+    'lattafa-khamrah-waha',
+    'rasasi-hawas-kobra'
+];
+
+UPDATED_PRODUCT_COVERS.forEach((slug) => {
+    const detail = window.CATALOG_DETAILS[slug];
+    if (!detail || !Array.isArray(detail.gallery)) return;
+    detail.gallery.unshift({
+        src: `images/detalles/${slug}/portada-nueva.jpg?v=${GENERATED_ASSET_VERSION}`,
+        label: 'Presentación'
+    });
 });
 
 window.CATALOG_DETAILS['armaf-odyssey-aqua'] = {

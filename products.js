@@ -67,6 +67,16 @@ window.CATALOG_PRODUCTS = [
         reference: ''
     },
     {
+        name: 'Turathi Blue',
+        brand: 'Afnan',
+        gender: 'masculino',
+        volume: '90 ml',
+        status: 'disponible',
+        price: 'Consultar',
+        image: 'images/afnan-turathi-blue-logo.jpg?v=20260905-1',
+        reference: 'Inspirado en Bvlgari Tygar'
+    },
+    {
         name: 'Club de Nuit Intense Man',
         brand: 'Armaf',
         gender: 'masculino',
@@ -164,16 +174,6 @@ window.CATALOG_PRODUCTS = [
         status: 'disponible',
         price: '$53.000',
         image: 'images/lattafa-eclaire-logo.jpg',
-        reference: ''
-    },
-    {
-        name: 'Fakhar Rose',
-        brand: 'Lattafa',
-        gender: 'femenino',
-        volume: '100 ml',
-        status: 'disponible',
-        price: '$47.000',
-        image: 'images/lattafa-fakhar-rose-logo.jpg',
         reference: ''
     },
     {
