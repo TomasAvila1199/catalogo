@@ -211,3 +211,8 @@ window.CATALOG_DETAILS['lattafa-fakhar-rose'] = {
         }
     ]
 };
+
+window.CATALOG_DETAILS["rayhaan-aquatica"] = { gallery: [{"src": "images/rayhaan-aquatica.jpg", "label": "Presentación"}, {"src": "images/detalles/rayhaan-aquatica/rayhaan-aquatica-portada-instagram-nuevo-estilo.jpg", "label": "Portada"}, {"src": "images/detalles/rayhaan-aquatica/rayhaan-aquatica-notas-instagram-nuevo-estilo.png", "label": "Notas olfativas"}] };
+window.CATALOG_DETAILS["armaf-odyssey-mega"] = { gallery: [{"src": "images/armaf-odyssey-mega.jpg", "label": "Presentación"}, {"src": "images/detalles/armaf-odyssey-mega/armaf-odyssey-mega-portada-instagram-nuevo-estilo.jpg", "label": "Portada"}, {"src": "images/detalles/armaf-odyssey-mega/armaf-odyssey-mega-notas-instagram-nuevo-estilo.jpg", "label": "Notas olfativas"}] };
+window.CATALOG_DETAILS["armaf-club-de-nuit-iconic"] = { gallery: [{"src": "images/armaf-club-de-nuit-iconic.jpg", "label": "Presentación"}, {"src": "images/detalles/armaf-club-de-nuit-iconic/armaf-club-de-nuit-iconic-portada-instagram-nuevo-estilo.jpg", "label": "Portada"}, {"src": "images/detalles/armaf-club-de-nuit-iconic/armaf-club-de-nuit-iconic-notas-instagram-nuevo-estilo.png", "label": "Notas olfativas"}] };
+window.CATALOG_DETAILS["yves-saint-laurent-y-eau-de-parfum"] = { gallery: [{"src": "images/yves-saint-laurent-y-edp.jpg", "label": "Presentación"}, {"src": "images/detalles/yves-saint-laurent-y-edp/yves-saint-laurent-y-edp-portada-instagram-nuevo-estilo.jpg", "label": "Portada"}, {"src": "images/detalles/yves-saint-laurent-y-edp/yves-saint-laurent-y-edp-notas-instagram-nuevo-estilo.jpg", "label": "Notas olfativas"}] };

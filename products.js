@@ -262,7 +262,7 @@ window.CATALOG_PRODUCTS = [
         gender: 'unisex',
         volume: '100 ml',
         status: 'disponible',
-        price: '$67.000',
+        price: '$66.000',
         image: 'images/riiffs-momento.jpg',
         reference: 'Inspirado en Montale Arabians Tonka'
     },
@@ -282,7 +282,7 @@ window.CATALOG_PRODUCTS = [
         gender: 'masculino',
         volume: '100 ml',
         status: 'disponible',
-        price: '$63.000',
+        price: '$57.000',
         image: 'images/rayhaan-nocturno-elixir.jpg',
         reference: "Inspirado en Bleu de Chanel L'Exclusif"
     },
@@ -401,9 +401,9 @@ window.CATALOG_PRODUCTS = [
         brand: 'Yves Saint Laurent',
         gender: 'masculino',
         volume: '100 ml',
-        status: 'pedido',
-        price: null,
-        image: 'images/pedido/ysl-y.jpg',
+        status: 'disponible',
+        price: '$184.000',
+        image: 'images/yves-saint-laurent-y-edp.jpg',
         reference: ''
     },
     {
@@ -684,6 +684,46 @@ window.CATALOG_PRODUCTS = [
         status: 'pedido',
         price: null,
         image: 'images/pedido/xerjoff-erba-pura.jpg',
+        reference: ''
+    },
+    {
+        name: 'Aquatica',
+        brand: 'Rayhaan',
+        gender: 'masculino',
+        volume: '100 ml',
+        status: 'disponible',
+        price: '$63.000',
+        image: 'images/rayhaan-aquatica.jpg',
+        reference: ''
+    },
+    {
+        name: 'Odyssey Mega',
+        brand: 'Armaf',
+        gender: 'masculino',
+        volume: '100 ml',
+        status: 'disponible',
+        price: '$45.000',
+        image: 'images/armaf-odyssey-mega.jpg',
+        reference: ''
+    },
+    {
+        name: 'Club de Nuit Iconic',
+        brand: 'Armaf',
+        gender: 'masculino',
+        volume: '105 ml',
+        status: 'disponible',
+        price: '$69.000',
+        image: 'images/armaf-club-de-nuit-iconic.jpg',
+        reference: ''
+    },
+    {
+        name: 'Club de Nuit Urban Man Elixir',
+        brand: 'Armaf',
+        gender: 'masculino',
+        volume: '105 ml',
+        status: 'disponible',
+        price: '$76.000',
+        image: 'images/armaf-club-de-nuit-urban-man-elixir.jpg',
         reference: ''
     }
 ];
