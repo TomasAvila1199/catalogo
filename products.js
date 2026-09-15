@@ -72,7 +72,7 @@ window.CATALOG_PRODUCTS = [
         gender: 'masculino',
         volume: '90 ml',
         status: 'disponible',
-        price: 'Consultar',
+        price: '$61.000',
         image: 'images/afnan-turathi-blue-logo.jpg?v=20260905-1',
         reference: 'Inspirado en Bvlgari Tygar'
     },
