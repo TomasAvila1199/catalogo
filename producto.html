@@ -15,10 +15,10 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&amp;family=Manrope:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css?v=20260914-fixes2">
+    <link rel="stylesheet" href="styles.css?v=20260914-carousel1">
     <script src="products.js?v=20260914-fixes2" defer></script>
     <script src="product-details.js?v=20260914-fixes2" defer></script>
-    <script src="product-detail.js?v=20260817-2" defer></script>
+    <script src="product-detail.js?v=20260914-carousel1" defer></script>
 </head>
 <body class="product-page">
     <a class="skip-link" href="#detalle">Ir al detalle</a>
@@ -43,8 +43,12 @@
         </div>
 
         <section class="detail-hero" id="detail-content" hidden>
-            <div class="detail-product-visual">
-                <img id="detail-image" alt="">
+            <div class="detail-product-visual" id="detail-carousel" aria-roledescription="carrusel" tabindex="0">
+                <div class="detail-visual-track" id="detail-visual-track"></div>
+                <button class="detail-visual-arrow previous" id="detail-visual-previous" type="button" aria-label="Imagen anterior">←</button>
+                <button class="detail-visual-arrow next" id="detail-visual-next" type="button" aria-label="Imagen siguiente">→</button>
+                <p class="detail-visual-caption" id="detail-visual-caption" aria-live="polite"></p>
+                <div class="detail-visual-dots" id="detail-visual-dots" role="tablist" aria-label="Imágenes de la fragancia"></div>
                 <span class="stock-badge detail-stock" id="detail-stock"></span>
             </div>
             <div class="detail-copy">
@@ -57,25 +61,6 @@
                     <p class="detail-price" id="detail-price"></p>
                     <a class="button detail-buy" id="detail-buy" href="#">Comprar por WhatsApp</a>
                 </div>
-            </div>
-        </section>
-
-        <section class="detail-gallery-section" id="detail-gallery-section" hidden>
-            <div class="detail-section-heading">
-                <p class="eyebrow">Conocé la fragancia</p>
-                <h2>Presentación, notas e inspiración</h2>
-                <p>Deslizá o elegí una imagen para ver cada detalle.</p>
-            </div>
-            <div class="detail-carousel" aria-roledescription="carrusel">
-                <div class="detail-stage">
-                    <button class="carousel-arrow previous" id="gallery-previous" type="button" aria-label="Imagen anterior">←</button>
-                    <figure class="detail-slide">
-                        <img id="gallery-image" alt="">
-                        <figcaption id="gallery-caption"></figcaption>
-                    </figure>
-                    <button class="carousel-arrow next" id="gallery-next" type="button" aria-label="Imagen siguiente">→</button>
-                </div>
-                <div class="detail-thumbnails" id="gallery-thumbnails" role="tablist" aria-label="Imágenes de la fragancia"></div>
             </div>
         </section>
 

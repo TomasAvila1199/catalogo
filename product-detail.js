@@ -34,7 +34,6 @@ const product = detailProducts.find((item) => detailSlugify(`${item.brand}-${ite
 
 const content = document.querySelector('#detail-content');
 const missing = document.querySelector('#detail-missing');
-const gallerySection = document.querySelector('#detail-gallery-section');
 const contact = document.querySelector('#detail-contact');
 
 function setLink(link, href) {
@@ -45,58 +44,149 @@ function setLink(link, href) {
 }
 
 function renderGallery(product, detail) {
-    const gallery = Array.isArray(detail.gallery) && detail.gallery.length
-        ? detail.gallery
-        : [{ src: product.image, label: 'Producto' }];
-    const image = document.querySelector('#gallery-image');
-    const caption = document.querySelector('#gallery-caption');
-    const thumbnails = document.querySelector('#gallery-thumbnails');
-    const previous = document.querySelector('#gallery-previous');
-    const next = document.querySelector('#gallery-next');
+    const suppliedGallery = Array.isArray(detail.gallery) ? detail.gallery : [];
+    const gallery = [{ src: product.image, label: 'Producto' }, ...suppliedGallery]
+        .filter((slide, index, slides) => slide && slide.src && slides.findIndex((candidate) => (
+            candidate && candidate.src && candidate.src.split('?')[0] === slide.src.split('?')[0]
+        )) === index);
+    const carousel = document.querySelector('#detail-carousel');
+    const track = document.querySelector('#detail-visual-track');
+    const caption = document.querySelector('#detail-visual-caption');
+    const dots = document.querySelector('#detail-visual-dots');
+    const previous = document.querySelector('#detail-visual-previous');
+    const next = document.querySelector('#detail-visual-next');
     let activeIndex = 0;
+    let pointerStartX = 0;
+    let pointerId = null;
+    let autoAdvanceTimer = null;
+    let isPaused = false;
+    const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    const slides = gallery.map((slide, index) => {
+        const figure = document.createElement('figure');
+        figure.className = 'detail-visual-slide';
+        figure.setAttribute('aria-hidden', String(index !== 0));
+
+        const backdrop = document.createElement('img');
+        backdrop.className = 'detail-visual-backdrop';
+        backdrop.src = slide.src;
+        backdrop.alt = '';
+        backdrop.setAttribute('aria-hidden', 'true');
+        backdrop.draggable = false;
+        backdrop.decoding = 'async';
+        backdrop.loading = 'lazy';
+
+        const image = document.createElement('img');
+        image.className = 'detail-visual-image';
+        image.src = slide.src;
+        image.alt = `${slide.label} de ${product.brand} ${product.name}`;
+        image.draggable = false;
+        image.decoding = 'async';
+        image.loading = index === 0 ? 'eager' : 'lazy';
+
+        figure.append(backdrop, image);
+        return figure;
+    });
+
+    const dotButtons = gallery.map((slide, index) => {
+        const button = document.createElement('button');
+        button.type = 'button';
+        button.className = 'detail-visual-dot';
+        button.setAttribute('role', 'tab');
+        button.setAttribute('aria-label', `Ver ${slide.label}`);
+        button.addEventListener('click', () => showSlide(index));
+        return button;
+    });
+
+    track.replaceChildren(...slides);
+    dots.replaceChildren(...dotButtons);
+
+    function scheduleAutoAdvance() {
+        window.clearTimeout(autoAdvanceTimer);
+        if (gallery.length < 2 || reduceMotion || isPaused || document.hidden) return;
+        autoAdvanceTimer = window.setTimeout(() => showSlide(activeIndex + 1), 5500);
+    }
 
     function showSlide(index) {
         activeIndex = (index + gallery.length) % gallery.length;
         const slide = gallery[activeIndex];
-        image.src = slide.src;
-        image.alt = `${slide.label} de ${product.brand} ${product.name}`;
+        track.style.transform = `translateX(-${activeIndex * 100}%)`;
         caption.textContent = slide.label;
-        [...thumbnails.children].forEach((button, buttonIndex) => {
+        slides.forEach((figure, slideIndex) => {
+            figure.setAttribute('aria-hidden', String(slideIndex !== activeIndex));
+        });
+        dotButtons.forEach((button, buttonIndex) => {
             const isActive = buttonIndex === activeIndex;
             button.classList.toggle('active', isActive);
             button.setAttribute('aria-selected', String(isActive));
         });
+        scheduleAutoAdvance();
     }
-
-    thumbnails.replaceChildren(...gallery.map((slide, index) => {
-        const button = document.createElement('button');
-        button.type = 'button';
-        button.className = 'detail-thumbnail';
-        button.setAttribute('role', 'tab');
-        button.setAttribute('aria-label', `Ver ${slide.label}`);
-        button.innerHTML = `<img src="${slide.src}" alt=""><span>${slide.label}</span>`;
-        button.addEventListener('click', () => showSlide(index));
-        return button;
-    }));
 
     previous.addEventListener('click', () => showSlide(activeIndex - 1));
     next.addEventListener('click', () => showSlide(activeIndex + 1));
 
-    let touchStartX = 0;
-    image.addEventListener('touchstart', (event) => {
-        touchStartX = event.changedTouches[0].clientX;
-    }, { passive: true });
-    image.addEventListener('touchend', (event) => {
-        const distance = event.changedTouches[0].clientX - touchStartX;
-        if (Math.abs(distance) < 45) return;
-        showSlide(activeIndex + (distance < 0 ? 1 : -1));
-    }, { passive: true });
+    carousel.addEventListener('keydown', (event) => {
+        if (event.key !== 'ArrowLeft' && event.key !== 'ArrowRight') return;
+        event.preventDefault();
+        showSlide(activeIndex + (event.key === 'ArrowRight' ? 1 : -1));
+    });
+
+    carousel.addEventListener('pointerdown', (event) => {
+        if (event.target.closest('button')) return;
+        pointerId = event.pointerId;
+        pointerStartX = event.clientX;
+        carousel.classList.add('is-dragging');
+        carousel.setPointerCapture(pointerId);
+    });
+
+    carousel.addEventListener('pointerup', (event) => {
+        if (pointerId !== event.pointerId) return;
+        const distance = event.clientX - pointerStartX;
+        carousel.classList.remove('is-dragging');
+        pointerId = null;
+        if (Math.abs(distance) >= 45) {
+            showSlide(activeIndex + (distance < 0 ? 1 : -1));
+        }
+    });
+
+    carousel.addEventListener('pointercancel', () => {
+        carousel.classList.remove('is-dragging');
+        pointerId = null;
+    });
+
+    carousel.addEventListener('mouseenter', () => {
+        isPaused = true;
+        window.clearTimeout(autoAdvanceTimer);
+    });
+
+    carousel.addEventListener('mouseleave', () => {
+        isPaused = false;
+        scheduleAutoAdvance();
+    });
+
+    carousel.addEventListener('focusin', () => {
+        isPaused = true;
+        window.clearTimeout(autoAdvanceTimer);
+    });
+
+    carousel.addEventListener('focusout', (event) => {
+        if (carousel.contains(event.relatedTarget)) return;
+        isPaused = false;
+        scheduleAutoAdvance();
+    });
+
+    document.addEventListener('visibilitychange', scheduleAutoAdvance);
 
     const hasMultipleSlides = gallery.length > 1;
     previous.hidden = !hasMultipleSlides;
     next.hidden = !hasMultipleSlides;
+    dots.hidden = !hasMultipleSlides;
+    caption.hidden = !hasMultipleSlides;
+    carousel.tabIndex = hasMultipleSlides ? 0 : -1;
+    const imageCountLabel = gallery.length === 1 ? '1 imagen' : `${gallery.length} imágenes`;
+    carousel.setAttribute('aria-label', `${product.brand} ${product.name}: ${imageCountLabel}`);
     showSlide(0);
-    gallerySection.hidden = false;
 }
 
 if (!product) {
@@ -115,9 +205,6 @@ if (!product) {
     document.title = `${productLabel} | Scenth Store`;
     document.querySelector('meta[name="description"]').content = detail.description || fallbackDescription(product);
 
-    const heroImage = document.querySelector('#detail-image');
-    heroImage.src = product.image;
-    heroImage.alt = `${productLabel} ${product.volume}`;
     document.querySelector('#detail-brand').textContent = product.brand;
     document.querySelector('#detail-name').textContent = product.name;
     document.querySelector('#detail-description').textContent = detail.description || fallbackDescription(product);
