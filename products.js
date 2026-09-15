@@ -61,8 +61,8 @@ window.CATALOG_PRODUCTS = [
         brand: 'Afnan',
         gender: 'unisex',
         volume: '100 ml',
-        status: 'disponible',
-        price: '$71.000',
+        status: 'pedido',
+        price: null,
         image: 'images/afnan-9pm-rebel-logo.jpg',
         reference: ''
     },
@@ -693,7 +693,7 @@ window.CATALOG_PRODUCTS = [
         volume: '100 ml',
         status: 'disponible',
         price: '$63.000',
-        image: 'images/rayhaan-aquatica.jpg',
+        image: 'images/rayhaan-aquatica-render.jpg',
         reference: ''
     },
     {
@@ -713,7 +713,7 @@ window.CATALOG_PRODUCTS = [
         volume: '105 ml',
         status: 'disponible',
         price: '$69.000',
-        image: 'images/armaf-club-de-nuit-iconic.jpg',
+        image: 'images/armaf-club-de-nuit-iconic-render.jpg',
         reference: ''
     },
     {
@@ -724,6 +724,26 @@ window.CATALOG_PRODUCTS = [
         status: 'disponible',
         price: '$76.000',
         image: 'images/armaf-club-de-nuit-urban-man-elixir.jpg',
+        reference: ''
+    },
+    {
+        name: 'Fakhar Rose',
+        brand: 'Lattafa',
+        gender: 'femenino',
+        volume: '100 ml',
+        status: 'pedido',
+        price: null,
+        image: 'images/lattafa-fakhar-rose-logo.jpg',
+        reference: ''
+    },
+    {
+        name: 'Fakhar Gold',
+        brand: 'Lattafa',
+        gender: 'unisex',
+        volume: '100 ml',
+        status: 'pedido',
+        price: null,
+        image: 'images/lattafa-fakhar-gold-render.jpg',
         reference: ''
     }
 ];
