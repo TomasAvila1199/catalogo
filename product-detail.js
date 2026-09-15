@@ -51,7 +51,6 @@ function renderGallery(product, detail) {
         )) === index);
     const carousel = document.querySelector('#detail-carousel');
     const track = document.querySelector('#detail-visual-track');
-    const caption = document.querySelector('#detail-visual-caption');
     const dots = document.querySelector('#detail-visual-dots');
     const previous = document.querySelector('#detail-visual-previous');
     const next = document.querySelector('#detail-visual-next');
@@ -109,9 +108,7 @@ function renderGallery(product, detail) {
 
     function showSlide(index) {
         activeIndex = (index + gallery.length) % gallery.length;
-        const slide = gallery[activeIndex];
         track.style.transform = `translateX(-${activeIndex * 100}%)`;
-        caption.textContent = slide.label;
         slides.forEach((figure, slideIndex) => {
             figure.setAttribute('aria-hidden', String(slideIndex !== activeIndex));
         });
@@ -182,7 +179,6 @@ function renderGallery(product, detail) {
     previous.hidden = !hasMultipleSlides;
     next.hidden = !hasMultipleSlides;
     dots.hidden = !hasMultipleSlides;
-    caption.hidden = !hasMultipleSlides;
     carousel.tabIndex = hasMultipleSlides ? 0 : -1;
     const imageCountLabel = gallery.length === 1 ? '1 imagen' : `${gallery.length} imágenes`;
     carousel.setAttribute('aria-label', `${product.brand} ${product.name}: ${imageCountLabel}`);

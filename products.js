@@ -172,7 +172,7 @@ window.CATALOG_PRODUCTS = [
         gender: 'femenino',
         volume: '100 ml',
         status: 'disponible',
-        price: '$53.000',
+        price: '$66.000',
         image: 'images/lattafa-eclaire-logo.jpg',
         reference: ''
     },
@@ -603,7 +603,7 @@ window.CATALOG_PRODUCTS = [
         volume: '125 ml',
         status: 'pedido',
         price: null,
-        image: 'images/pedido/parfums-de-marly-layton.jpg',
+        image: 'images/pedido/parfums-de-marly-layton-box-bottle.jpg',
         reference: ''
     },
     {
@@ -633,7 +633,7 @@ window.CATALOG_PRODUCTS = [
         volume: '75 ml',
         status: 'pedido',
         price: null,
-        image: 'images/pedido/parfums-de-marly-delina.jpg',
+        image: 'images/pedido/parfums-de-marly-delina-box-bottle.jpg',
         reference: ''
     },
     {
@@ -663,7 +663,7 @@ window.CATALOG_PRODUCTS = [
         volume: '100 ml',
         status: 'pedido',
         price: null,
-        image: 'images/pedido/le-labo-santal-33.jpg',
+        image: 'images/pedido/le-labo-santal-33-box-bottle.jpg',
         reference: ''
     },
     {
@@ -683,7 +683,7 @@ window.CATALOG_PRODUCTS = [
         volume: '100 ml',
         status: 'pedido',
         price: null,
-        image: 'images/pedido/xerjoff-erba-pura.jpg',
+        image: 'images/pedido/xerjoff-erba-pura-box-bottle.jpg',
         reference: ''
     },
     {

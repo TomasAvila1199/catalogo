@@ -133,7 +133,13 @@ function filteredProducts() {
         const haystack = normalize(`${product.brand} ${product.name} ${product.reference}`);
         const matchesSearch = !query || haystack.includes(query);
         return matchesStatus && matchesGender && matchesSearch;
-    });
+    }).sort((first, second) => (
+        `${first.brand} ${first.name}`.localeCompare(
+            `${second.brand} ${second.name}`,
+            'es',
+            { sensitivity: 'base', numeric: true }
+        )
+    ));
 }
 
 function renderCatalog() {
