@@ -32,7 +32,7 @@ window.CATALOG_PRODUCTS = [
         gender: 'unisex',
         volume: '100 ml',
         status: 'disponible',
-        price: '$84.000',
+        price: '$90.000',
         image: 'images/afnan-9pm-night-out-logo.jpg',
         reference: ''
     },
@@ -61,8 +61,8 @@ window.CATALOG_PRODUCTS = [
         brand: 'Afnan',
         gender: 'unisex',
         volume: '100 ml',
-        status: 'pedido',
-        price: null,
+        status: 'disponible',
+        price: '$83.000',
         image: 'images/afnan-9pm-rebel-logo.jpg',
         reference: ''
     },
@@ -232,7 +232,7 @@ window.CATALOG_PRODUCTS = [
         gender: 'masculino',
         volume: '100 ml',
         status: 'disponible',
-        price: '$74.000',
+        price: '$71.000',
         image: 'images/rasasi-hawas-verde-logo.jpg',
         reference: ''
     },
@@ -362,7 +362,7 @@ window.CATALOG_PRODUCTS = [
         gender: 'unisex',
         volume: '55 ml',
         status: 'disponible',
-        price: '$59.000',
+        price: '$57.000',
         image: 'images/lattafa-atlas-logo.jpg?v=20260823-3',
         reference: ''
     },
@@ -744,6 +744,46 @@ window.CATALOG_PRODUCTS = [
         status: 'pedido',
         price: null,
         image: 'images/lattafa-fakhar-gold-render.jpg',
+        reference: ''
+    },
+    {
+        name: 'Salvo Elixir',
+        brand: 'Maison Alhambra',
+        gender: 'masculino',
+        volume: '60 ml',
+        status: 'disponible',
+        price: '$48.000',
+        image: 'images/maison-alhambra-salvo-elixir-logo.jpg?v=20260928-1',
+        reference: 'Inspirado en Dior Sauvage Elixir'
+    },
+    {
+        name: 'Rome Pour Homme',
+        brand: 'Mast Perfume',
+        gender: 'masculino',
+        volume: '100 ml',
+        status: 'pedido',
+        price: null,
+        image: 'images/mast-perfume-rome-pour-homme-logo.jpg?v=20260928-1',
+        reference: 'Inspirado en Valentino Uomo Born in Roma'
+    },
+    {
+        name: 'Hawas Tropical',
+        brand: 'Rasasi',
+        gender: 'masculino',
+        volume: '100 ml',
+        status: 'disponible',
+        price: '$57.000',
+        image: 'images/rasasi-hawas-tropical-logo.jpg?v=20260928-1',
+        reference: 'Inspirado en Jean Paul Gaultier Le Beau Paradise Garden'
+    },
+    {
+        name: 'Summer Hammer',
+        brand: 'Lorenzo Pazzaglia',
+        gender: 'unisex',
+        volume: '50 ml',
+        status: 'pedido',
+        price: null,
+        image: 'images/lorenzo-pazzaglia-summer-hammer-logo.jpg?v=20260928-1',
         reference: ''
     }
 ];

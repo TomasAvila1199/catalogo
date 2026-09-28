@@ -162,10 +162,14 @@ const GENERATED_DETAIL_GALLERIES = {
     'rayhaan-tropical-vibe': true,
     'lattafa-atlas': true,
     'lattafa-asad-elixir': true,
-    'afnan-turathi-blue': true
+    'afnan-turathi-blue': true,
+    'maison-alhambra-salvo-elixir': true,
+    'mast-perfume-rome-pour-homme': true,
+    'rasasi-hawas-tropical': true,
+    'lorenzo-pazzaglia-summer-hammer': false
 };
 
-const GENERATED_ASSET_VERSION = '20260906-1';
+const GENERATED_ASSET_VERSION = '20260928-1';
 
 Object.entries(GENERATED_DETAIL_GALLERIES).forEach(([slug, hasAlternative]) => {
     const current = window.CATALOG_DETAILS[slug] || {};
@@ -190,7 +194,11 @@ const UPDATED_PRODUCT_COVERS = [
     'armaf-odyssey-aqua',
     'bharara-king-edp',
     'lattafa-khamrah-waha',
-    'rasasi-hawas-kobra'
+    'rasasi-hawas-kobra',
+    'maison-alhambra-salvo-elixir',
+    'mast-perfume-rome-pour-homme',
+    'rasasi-hawas-tropical',
+    'lorenzo-pazzaglia-summer-hammer'
 ];
 
 UPDATED_PRODUCT_COVERS.forEach((slug) => {
@@ -258,6 +266,10 @@ const SHORT_PRODUCT_DESCRIPTIONS = {
     'lattafa-asad-elixir': 'Especias, tabaco y maderas se suavizan con vainilla y ámbar. Intensa, cálida y con un perfil oscuro para la noche.',
     'dior-sauvage-eau-de-parfum': 'Bergamota y pimienta se mezclan con lavanda, ambroxan y vainilla. Fresca, especiada y elegante, con excelente versatilidad.',
     'chanel-bleu-de-chanel-eau-de-parfum': 'Cítricos y notas aromáticas dan paso a incienso, sándalo y cedro. Refinada, amaderada y adecuada para cualquier ocasión.',
+    'maison-alhambra-salvo-elixir': 'Especias intensas, lavanda y un fondo profundo de regaliz, ámbar y maderas. Potente, oscuro y elegante para la noche.',
+    'mast-perfume-rome-pour-homme': 'Geranio, jengibre y salvia descansan sobre cedro, vetiver y maderas. Aromática, moderna y de carácter masculino.',
+    'rasasi-hawas-tropical': 'Agua de coco, higo y menta se funden con sándalo, tonka y almizcle. Tropical, verde y cremosa para los días cálidos.',
+    'lorenzo-pazzaglia-summer-hammer': 'Mango, piña, coco y ron blanco se encuentran con notas marinas, sándalo y ámbar. Un extrait tropical, intenso y luminoso.',
     'yves-saint-laurent-y-eau-de-parfum': 'Manzana, bergamota y jengibre se unen a salvia, enebro, tonka y maderas. Fresca, limpia y marcadamente masculina.',
     'giorgio-armani-acqua-di-gio-profondo-eau-de-parfum': 'Bergamota y mandarina verde se sumergen en notas marinas, hierbas aromáticas y maderas minerales. Fresca y profunda.',
     'jean-paul-gaultier-le-male-elixir': 'Lavanda y menta se envuelven en miel, vainilla, tonka y tabaco. Dulce, cálida y seductora, ideal para la noche.',
@@ -300,4 +312,26 @@ Object.entries(SHORT_PRODUCT_DESCRIPTIONS).forEach(([slug, description]) => {
         ...(window.CATALOG_DETAILS[slug] || {}),
         description
     };
+});
+
+const NEW_PRODUCT_HIGHLIGHTS = {
+    'maison-alhambra-salvo-elixir': ['Especiado', 'Aromático', 'Amaderado'],
+    'mast-perfume-rome-pour-homme': ['Aromático', 'Especiado', 'Amaderado'],
+    'rasasi-hawas-tropical': ['Tropical', 'Verde', 'Cremoso'],
+    'lorenzo-pazzaglia-summer-hammer': ['Tropical', 'Frutal', 'Marino']
+};
+
+Object.entries(NEW_PRODUCT_HIGHLIGHTS).forEach(([slug, highlights]) => {
+    const detail = window.CATALOG_DETAILS[slug] || {};
+    const base = `images/detalles/${slug}`;
+    const gallery = [
+        { src: `${base}/portada-nueva.jpg?v=${GENERATED_ASSET_VERSION}`, label: 'Portada' },
+        { src: `${base}/notas-nuevas.jpg?v=${GENERATED_ASSET_VERSION}`, label: 'Notas olfativas' }
+    ];
+
+    if (slug !== 'lorenzo-pazzaglia-summer-hammer') {
+        gallery.push({ src: `${base}/alternativa-nueva.jpg?v=${GENERATED_ASSET_VERSION}`, label: 'Alternativa olfativa' });
+    }
+
+    window.CATALOG_DETAILS[slug] = { ...detail, highlights, gallery };
 });
