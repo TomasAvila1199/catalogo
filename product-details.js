@@ -169,7 +169,7 @@ const GENERATED_DETAIL_GALLERIES = {
     'lorenzo-pazzaglia-summer-hammer': false
 };
 
-const GENERATED_ASSET_VERSION = '20260928-1';
+const GENERATED_ASSET_VERSION = '20260928-2';
 
 Object.entries(GENERATED_DETAIL_GALLERIES).forEach(([slug, hasAlternative]) => {
     const current = window.CATALOG_DETAILS[slug] || {};
@@ -325,13 +325,15 @@ Object.entries(NEW_PRODUCT_HIGHLIGHTS).forEach(([slug, highlights]) => {
     const detail = window.CATALOG_DETAILS[slug] || {};
     const base = `images/detalles/${slug}`;
     const gallery = [
-        { src: `${base}/portada-nueva.jpg?v=${GENERATED_ASSET_VERSION}`, label: 'Portada' },
+        { src: `${base}/portada-v2.jpg?v=${GENERATED_ASSET_VERSION}`, label: 'Portada' },
         { src: `${base}/notas-nuevas.jpg?v=${GENERATED_ASSET_VERSION}`, label: 'Notas olfativas' }
     ];
 
     if (slug !== 'lorenzo-pazzaglia-summer-hammer') {
-        gallery.push({ src: `${base}/alternativa-nueva.jpg?v=${GENERATED_ASSET_VERSION}`, label: 'Alternativa olfativa' });
+        gallery.push({ src: `${base}/alternativa-v2.jpg?v=${GENERATED_ASSET_VERSION}`, label: 'Alternativa olfativa' });
     }
+
+    gallery.push({ src: `${base}/foto-nueva.jpg?v=${GENERATED_ASSET_VERSION}`, label: 'Foto del producto' });
 
     window.CATALOG_DETAILS[slug] = { ...detail, highlights, gallery };
 });
