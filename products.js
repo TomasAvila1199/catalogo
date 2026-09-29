@@ -758,7 +758,7 @@ window.CATALOG_PRODUCTS = [
     },
     {
         name: 'Rome Pour Homme',
-        brand: 'Mast Perfume',
+        brand: 'Bharara · Mast Perfume',
         gender: 'masculino',
         volume: '100 ml',
         status: 'pedido',
