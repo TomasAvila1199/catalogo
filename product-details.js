@@ -169,7 +169,7 @@ const GENERATED_DETAIL_GALLERIES = {
     'lorenzo-pazzaglia-summer-hammer': false
 };
 
-const GENERATED_ASSET_VERSION = '20260930-2';
+const GENERATED_ASSET_VERSION = '20260930-3';
 
 Object.entries(GENERATED_DETAIL_GALLERIES).forEach(([slug, hasAlternative]) => {
     const current = window.CATALOG_DETAILS[slug] || {};
