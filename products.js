@@ -753,7 +753,7 @@ window.CATALOG_PRODUCTS = [
         volume: '60 ml',
         status: 'disponible',
         price: '$48.000',
-        image: 'images/maison-alhambra-salvo-elixir-logo.jpg?v=20260928-1',
+        image: 'images/maison-alhambra-salvo-elixir-logo.jpg?v=20260930-1',
         reference: 'Inspirado en Dior Sauvage Elixir'
     },
     {
@@ -763,7 +763,7 @@ window.CATALOG_PRODUCTS = [
         volume: '100 ml',
         status: 'pedido',
         price: null,
-        image: 'images/mast-perfume-rome-pour-homme-logo.jpg?v=20260928-1',
+        image: 'images/mast-perfume-rome-pour-homme-logo.jpg?v=20260930-1',
         reference: 'Inspirado en Valentino Uomo Born in Roma'
     },
     {
@@ -773,7 +773,7 @@ window.CATALOG_PRODUCTS = [
         volume: '100 ml',
         status: 'disponible',
         price: '$57.000',
-        image: 'images/rasasi-hawas-tropical-logo.jpg?v=20260928-1',
+        image: 'images/rasasi-hawas-tropical-logo.jpg?v=20260930-1',
         reference: 'Inspirado en Jean Paul Gaultier Le Beau Paradise Garden'
     },
     {
@@ -783,7 +783,7 @@ window.CATALOG_PRODUCTS = [
         volume: '50 ml',
         status: 'pedido',
         price: null,
-        image: 'images/lorenzo-pazzaglia-summer-hammer-logo.jpg?v=20260928-1',
+        image: 'images/lorenzo-pazzaglia-summer-hammer-logo.jpg?v=20260930-1',
         reference: ''
     }
 ];
