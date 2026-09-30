@@ -169,7 +169,7 @@ const GENERATED_DETAIL_GALLERIES = {
     'lorenzo-pazzaglia-summer-hammer': false
 };
 
-const GENERATED_ASSET_VERSION = '20260930-1';
+const GENERATED_ASSET_VERSION = '20260930-2';
 
 Object.entries(GENERATED_DETAIL_GALLERIES).forEach(([slug, hasAlternative]) => {
     const current = window.CATALOG_DETAILS[slug] || {};
@@ -266,8 +266,8 @@ const SHORT_PRODUCT_DESCRIPTIONS = {
     'lattafa-asad-elixir': 'Especias, tabaco y maderas se suavizan con vainilla y ámbar. Intensa, cálida y con un perfil oscuro para la noche.',
     'dior-sauvage-eau-de-parfum': 'Bergamota y pimienta se mezclan con lavanda, ambroxan y vainilla. Fresca, especiada y elegante, con excelente versatilidad.',
     'chanel-bleu-de-chanel-eau-de-parfum': 'Cítricos y notas aromáticas dan paso a incienso, sándalo y cedro. Refinada, amaderada y adecuada para cualquier ocasión.',
-    'maison-alhambra-salvo-elixir': 'Especias intensas, lavanda y un fondo profundo de regaliz, ámbar y maderas. Potente, oscuro y elegante para la noche.',
-    'mast-perfume-rome-pour-homme': 'Geranio, jengibre y salvia descansan sobre cedro, vetiver y maderas. Aromática, moderna y de carácter masculino.',
+    'maison-alhambra-salvo-elixir': 'Pimienta negra, tabaco y piña dan paso a pachulí, iris y café, sobre un fondo ambarado, vainillado y amaderado. Intenso para la noche.',
+    'mast-perfume-rome-pour-homme': 'Geranio y rosa abren paso a salvia y jengibre, sobre una base de cedro y vetiver. Aromático, fresco y amaderado.',
     'rasasi-hawas-tropical': 'Agua de coco, higo y menta se funden con sándalo, tonka y almizcle. Tropical, verde y cremosa para los días cálidos.',
     'lorenzo-pazzaglia-summer-hammer': 'Mango, piña, coco y ron blanco se encuentran con notas marinas, sándalo y ámbar. Un extrait tropical, intenso y luminoso.',
     'yves-saint-laurent-y-eau-de-parfum': 'Manzana, bergamota y jengibre se unen a salvia, enebro, tonka y maderas. Fresca, limpia y marcadamente masculina.',
