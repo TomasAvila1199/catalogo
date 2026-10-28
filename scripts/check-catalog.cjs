@@ -36,8 +36,14 @@ const base = (process.env.CATALOG_URL || 'http://localhost:8000').replace(/\/?$/
         await page.locator('#gender-filter').selectOption('femenino');
         assert((await page.locator('.product-meta').allTextContents()).every(text => text.includes('femenino')));
         await page.locator('#gender-filter').selectOption('todos');
-        const detail = await page.locator('.product-detail-hitarea').first().getAttribute('href');
-        await page.goto(new URL(detail, base).href, { waitUntil: 'networkidle' });
+        await context.route('https://wa.me/**', route => route.fulfill({ contentType: 'text/plain', body: 'WhatsApp destination verified' }));
+        const expectedWhatsApp = await page.locator('.product-action').first().getAttribute('href');
+        const [popup] = await Promise.all([context.waitForEvent('page'), page.locator('.product-action').first().click()]);
+        await popup.waitForLoadState();
+        assert.equal(popup.url(), expectedWhatsApp);
+        await popup.close();
+        await Promise.all([page.waitForURL('**/producto.html?producto=*'), page.locator('.product-detail-hitarea').first().click()]);
+        await page.waitForLoadState('networkidle');
         assert(await page.locator('#detail-content').isVisible());
         assert((await page.locator('#detail-buy').getAttribute('href')).startsWith('https://wa.me/5493415763811?text='));
         assert(await page.locator('.detail-visual-image').first().evaluate(image => image.complete && image.naturalWidth > 0));
