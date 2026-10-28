@@ -42,7 +42,7 @@ const base = (process.env.CATALOG_URL || 'http://localhost:8000').replace(/\/?$/
         await popup.waitForLoadState();
         assert.equal(popup.url(), expectedWhatsApp);
         await popup.close();
-        await Promise.all([page.waitForURL('**/producto.html?producto=*'), page.locator('.product-detail-hitarea').first().click()]);
+        await Promise.all([page.waitForURL(url => /\/producto(?:\.html)?$/.test(url.pathname) && url.searchParams.has('producto')), page.locator('.product-detail-hitarea').first().click()]);
         await page.waitForLoadState('networkidle');
         assert(await page.locator('#detail-content').isVisible());
         assert((await page.locator('#detail-buy').getAttribute('href')).startsWith('https://wa.me/5493415763811?text='));
