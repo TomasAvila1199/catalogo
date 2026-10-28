@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://scenth.com.ar/sitemap.xml

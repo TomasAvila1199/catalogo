@@ -13,6 +13,10 @@ const whatsappNudge = document.querySelector('#whatsapp-nudge');
 const whatsappNudgeClose = document.querySelector('.whatsapp-nudge-close');
 const floatingWhatsApp = document.querySelector('.floating-whatsapp');
 
+const sortedProducts = [...products].sort((a, b) => `${a.brand} ${a.name}`.localeCompare(`${b.brand} ${b.name}`, 'es', { sensitivity: 'base', numeric: true }));
+const searchableProducts = new Map(products.map(product => [product, normalize(`${product.brand} ${product.name} ${product.reference}`)]));
+const cardCache = new Map();
+
 const state = {
     status: 'disponible',
     gender: 'todos',
@@ -40,13 +44,23 @@ function setWhatsAppLinks() {
 }
 
 function setupWhatsAppNudge() {
-    if (!whatsappNudge) return;
-
-    const hideNudge = () => whatsappNudge.classList.remove('visible');
-    window.setTimeout(() => whatsappNudge.classList.add('visible'), 900);
-    window.setTimeout(hideNudge, 14000);
-    whatsappNudgeClose?.addEventListener('click', hideNudge);
-    floatingWhatsApp?.addEventListener('click', hideNudge);
+    if (!whatsappNudge || window.matchMedia('(max-width: 760px)').matches) return;
+    let dismissed = false;
+    try { dismissed = sessionStorage.getItem('scenth-nudge-dismissed') === '1'; } catch {}
+    if (dismissed) return;
+    const hideNudge = () => {
+        whatsappNudge.hidden = true;
+        whatsappNudge.classList.remove('visible');
+        try { sessionStorage.setItem('scenth-nudge-dismissed', '1'); } catch {}
+    };
+    window.setTimeout(() => {
+        if (dismissed) return;
+        whatsappNudge.hidden = false;
+        requestAnimationFrame(() => whatsappNudge.classList.add('visible'));
+    }, 6000);
+    window.setTimeout(hideNudge, 16000);
+    whatsappNudgeClose?.addEventListener('click', () => { dismissed = true; hideNudge(); floatingWhatsApp?.focus(); });
+    floatingWhatsApp?.addEventListener('click', () => { dismissed = true; hideNudge(); });
 }
 
 function normalize(value) {
@@ -76,7 +90,11 @@ function addPlaceholder(container, product) {
     const placeholder = document.createElement('div');
     placeholder.className = 'product-placeholder';
     placeholder.setAttribute('aria-hidden', 'true');
-    placeholder.innerHTML = `<span>${getInitials(product)}</span><small>${product.brand}</small>`;
+    const initials = document.createElement('span');
+    initials.textContent = getInitials(product);
+    const brand = document.createElement('small');
+    brand.textContent = product.brand;
+    placeholder.append(initials, brand);
     container.appendChild(placeholder);
 }
 
@@ -92,7 +110,7 @@ function buildProductCard(product) {
     const detailLink = card.querySelector('.product-detail-hitarea');
 
     if (product.image) {
-        image.src = product.image;
+        window.setCatalogImage(image, product.image, '(max-width: 760px) calc((100vw - 43px) / 2), (max-width: 980px) 30vw, 300px');
         image.alt = `${product.brand} ${product.name}`;
         image.addEventListener('error', () => {
             image.remove();
@@ -111,6 +129,7 @@ function buildProductCard(product) {
     price.textContent = isAvailable ? product.price : 'Consultar precio';
     price.classList.toggle('order', !isAvailable);
     action.textContent = isAvailable ? 'Comprar' : 'Cotizar';
+    action.setAttribute('aria-label', `${action.textContent} ${product.brand} ${product.name} por WhatsApp`);
     action.href = whatsappUrl(
         isAvailable
             ? `Hola Scenth Store, quiero comprar ${product.brand} ${product.name}. ¿Sigue disponible?`
@@ -127,19 +146,13 @@ function buildProductCard(product) {
 function filteredProducts() {
     const query = normalize(state.search);
 
-    return products.filter((product) => {
+    return sortedProducts.filter((product) => {
         const matchesStatus = state.status === 'todos' || product.status === state.status;
         const matchesGender = state.gender === 'todos' || product.gender === state.gender;
-        const haystack = normalize(`${product.brand} ${product.name} ${product.reference}`);
+        const haystack = searchableProducts.get(product);
         const matchesSearch = !query || haystack.includes(query);
         return matchesStatus && matchesGender && matchesSearch;
-    }).sort((first, second) => (
-        `${first.brand} ${first.name}`.localeCompare(
-            `${second.brand} ${second.name}`,
-            'es',
-            { sensitivity: 'base', numeric: true }
-        )
-    ));
+    });
 }
 
 function renderCatalog() {
@@ -150,7 +163,12 @@ function renderCatalog() {
     catalogGrid.hidden = false;
 
     const visibleProducts = filteredProducts();
-    catalogGrid.replaceChildren(...visibleProducts.map(buildProductCard));
+    catalogGrid.replaceChildren(...visibleProducts.map((product) => {
+        if (!cardCache.has(product)) cardCache.set(product, buildProductCard(product));
+        return cardCache.get(product);
+    }));
+    document.querySelector('#catalog-count').textContent = `${visibleProducts.length} ${visibleProducts.length === 1 ? 'fragancia' : 'fragancias'} · ${state.status === 'disponible' ? 'En stock' : state.status === 'pedido' ? 'A pedido' : 'Toda la selección'}`;
+    statusTabs.forEach(tab => tab.setAttribute('aria-pressed', String(tab.dataset.status === state.status)));
     emptyState.hidden = visibleProducts.length > 0;
 }
 
@@ -162,9 +180,11 @@ statusTabs.forEach((tab) => {
     });
 });
 
+let searchTimer;
 searchInput.addEventListener('input', () => {
     state.search = searchInput.value.trim();
-    renderCatalog();
+    clearTimeout(searchTimer);
+    searchTimer = setTimeout(renderCatalog, 100);
 });
 
 genderFilter.addEventListener('change', () => {
@@ -180,6 +200,7 @@ document.querySelector('#clear-filters').addEventListener('click', () => {
     genderFilter.value = 'todos';
     statusTabs.forEach((tab) => tab.classList.toggle('active', tab.dataset.status === 'todos'));
     renderCatalog();
+    searchInput.focus();
 });
 
 setWhatsAppLinks();

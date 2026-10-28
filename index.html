@@ -7,31 +7,42 @@
     <meta name="theme-color" content="#090909">
     <meta name="application-name" content="Scenth Store">
     <meta name="apple-mobile-web-app-title" content="Scenth Store">
+    <link rel="canonical" href="https://scenth.com.ar/">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Scenth Store | Perfumes originales">
+    <meta property="og:description" content="Descubrí perfumes originales en stock y a pedido. Atención personalizada en Funes y envíos a todo el país.">
+    <meta property="og:url" content="https://scenth.com.ar/">
+    <meta property="og:image" content="https://scenth.com.ar/scenth-icon-512-v5.png">
+    <meta property="og:locale" content="es_AR">
+    <meta name="twitter:card" content="summary">
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"Store","name":"Scenth Store","url":"https://scenth.com.ar/","telephone":"+5493415763811","sameAs":["https://instagram.com/scenth.store"]}</script>
     <title>Scenth Store | Perfumes originales</title>
     <link rel="icon" href="/favicon-safari-v6.ico?v=20260810-1" sizes="16x16 32x32" type="image/x-icon">
-    <link rel="apple-touch-icon" sizes="180x180" href="https://scenth.store/apple-touch-icon-v5.png?v=20260810-1">
-    <link rel="apple-touch-icon-precomposed" sizes="180x180" href="https://scenth.store/apple-touch-icon-v5.png?v=20260810-1">
-    <link rel="mask-icon" href="https://scenth.store/safari-pinned-tab-v4.svg?v=20260810-1" color="#d5a016">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon-v5.png?v=20260810-1">
+    <link rel="apple-touch-icon-precomposed" sizes="180x180" href="/apple-touch-icon-v5.png?v=20260810-1">
+    <link rel="mask-icon" href="/safari-pinned-tab-v4.svg?v=20260810-1" color="#d5a016">
     <link rel="manifest" href="/site-v5.webmanifest">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&amp;family=Manrope:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css?v=20260914-catalog2">
-    <script src="products.js?v=20260914-catalog2" defer></script>
-    <script src="app.js?v=20260914-catalog2" defer></script>
+    <link rel="stylesheet" href="styles.css?v=20261028-performance1">
+    <script src="image-sources.js?v=20261028-performance1" defer></script>
+    <script src="catalog-images.js?v=20261028-performance1" defer></script>
+    <script src="products.js?v=20261028-performance1" defer></script>
+    <script src="app.js?v=20261028-performance1" defer></script>
 </head>
 <body>
     <a class="skip-link" href="#catalogo">Ir al catálogo</a>
 
     <header class="site-header">
         <a class="brand" href="#inicio" aria-label="Scenth Store, inicio">
-            <img src="images/scenth-store-logo.png" alt="Scenth Store">
+            <img src="images/scenth-store-logo.webp" alt="Scenth Store" width="160" height="160" decoding="async">
         </a>
         <nav class="header-links" aria-label="Navegación principal">
             <a href="#catalogo">Catálogo</a>
             <a href="#como-comprar">Cómo comprar</a>
         </nav>
-        <a class="button button-small header-whatsapp" data-whatsapp="general" href="#">
+        <a class="button button-small header-whatsapp" data-whatsapp="general" href="https://wa.me/5493415763811">
             <img src="images/whatsapp-icon-clean.png?v=20260810-1" alt="" aria-hidden="true" width="24" height="24">
             <span>WhatsApp</span>
         </a>
@@ -45,7 +56,7 @@
             <p class="hero-copy">Perfumes originales, sellados y seleccionados. Encontrá opciones disponibles o consultanos por las fragancias que trabajamos a pedido.</p>
             <div class="hero-actions">
                 <a class="button" href="#catalogo">Ver catálogo</a>
-                <a class="button button-secondary" data-whatsapp="general" href="#">Consultar por WhatsApp</a>
+                <a class="button button-secondary" data-whatsapp="general" href="https://wa.me/5493415763811">Consultar por WhatsApp</a>
             </div>
             <ul class="trust-list" aria-label="Beneficios de compra">
                 <li>
@@ -80,16 +91,16 @@
 
             <div class="catalog-tools">
                 <div class="status-tabs" role="group" aria-label="Filtrar por disponibilidad">
-                    <button class="status-tab active" type="button" data-status="disponible">Stock</button>
-                    <button class="status-tab" type="button" data-status="pedido">A pedido</button>
-                    <button class="status-tab" type="button" data-status="todos">Todos</button>
+                    <button class="status-tab active" type="button" aria-pressed="true" data-status="disponible">Stock</button>
+                    <button class="status-tab" type="button" aria-pressed="false" data-status="pedido">A pedido</button>
+                    <button class="status-tab" type="button" aria-pressed="false" data-status="todos">Todos</button>
                 </div>
 
                 <div class="search-row">
                     <label class="search-box">
                         <span class="sr-only">Buscar perfume o marca</span>
                         <span aria-hidden="true">⌕</span>
-                        <input id="search" type="search" placeholder="Buscar perfume o marca" autocomplete="off">
+                        <input id="search" type="search" placeholder="Perfume o marca" autocomplete="off">
                     </label>
                     <label class="gender-select">
                         <span class="sr-only">Filtrar por género</span>
@@ -110,13 +121,15 @@
                     <p>Explorá nuestra selección de perfumes de diseñador y de nicho. Si el que buscás no aparece acá, escribinos por WhatsApp y lo cotizamos especialmente para vos.</p>
                     <p class="order-lead-time"><strong>Pedidos especiales:</strong> demora estimada de 7 a 10 días, sujeta a disponibilidad del proveedor.</p>
                 </div>
-                <a class="button order-whatsapp" data-whatsapp="order" href="#">
+                <a class="button order-whatsapp" data-whatsapp="order" href="https://wa.me/5493415763811">
                     <img src="images/whatsapp-icon-clean.png?v=20260810-1" alt="" aria-hidden="true" width="30" height="30">
                     <span>Cotizar por WhatsApp</span>
                 </a>
             </section>
 
-            <div class="catalog-grid" id="catalog-grid" aria-live="polite"></div>
+            <p class="catalog-count" id="catalog-count" role="status" aria-live="polite" aria-atomic="true"></p>
+            <div class="catalog-grid" id="catalog-grid"></div>
+            <noscript><p>Activá JavaScript para explorar las fragancias o <a href="https://wa.me/5493415763811">pedinos el catálogo por WhatsApp</a>.</p></noscript>
             <div class="empty-state" id="empty-state" hidden>
                 <p>No encontramos fragancias con esos filtros.</p>
                 <button type="button" id="clear-filters">Limpiar filtros</button>
@@ -155,7 +168,7 @@
                 <h2>Consultanos por cualquier fragancia.</h2>
                 <p>También trabajamos a pedido y podemos orientarte según tus gustos y presupuesto.</p>
             </div>
-            <a class="button" data-whatsapp="general" href="#">Hablar por WhatsApp</a>
+            <a class="button" data-whatsapp="general" href="https://wa.me/5493415763811">Hablar por WhatsApp</a>
         </section>
     </main>
 
@@ -168,14 +181,14 @@
         </div>
         <div class="footer-links">
             <a href="https://instagram.com/scenth.store" target="_blank" rel="noreferrer">Instagram · @scenth.store</a>
-            <a data-whatsapp="general" href="#">WhatsApp · 341 576-3811</a>
+            <a data-whatsapp="general" href="https://wa.me/5493415763811">WhatsApp · 341 576-3811</a>
         </div>
     </footer>
 
     <div class="whatsapp-widget">
-        <div class="whatsapp-nudge" id="whatsapp-nudge" role="status" aria-live="polite">
+        <div class="whatsapp-nudge" id="whatsapp-nudge" hidden>
             <button class="whatsapp-nudge-close" type="button" aria-label="Cerrar aviso">×</button>
-            <a class="whatsapp-nudge-link" data-whatsapp="general" href="#" aria-label="Consultar ahora por WhatsApp">
+            <a class="whatsapp-nudge-link" data-whatsapp="general" href="https://wa.me/5493415763811" aria-label="Consultar ahora por WhatsApp">
                 <span class="whatsapp-nudge-icon" aria-hidden="true">
                     <img src="images/whatsapp-icon-clean.png?v=20260810-1" alt="" width="46" height="46">
                 </span>
@@ -187,7 +200,7 @@
                 </span>
             </a>
         </div>
-        <a class="floating-whatsapp" data-whatsapp="general" href="#" aria-label="Consultar por WhatsApp">
+        <a class="floating-whatsapp" data-whatsapp="general" href="https://wa.me/5493415763811" aria-label="Consultar por WhatsApp">
             <img src="images/whatsapp-icon-clean.png?v=20260810-1" alt="" aria-hidden="true" width="60" height="60">
         </a>
     </div>
@@ -195,7 +208,7 @@
     <template id="product-template">
         <article class="product-card">
             <div class="product-image-wrap">
-                <img class="product-image" alt="" loading="lazy">
+                <img class="product-image" alt="" loading="lazy" decoding="async" width="720" height="720">
                 <span class="stock-badge"></span>
             </div>
             <div class="product-info">
@@ -203,10 +216,10 @@
                 <h3 class="product-name"></h3>
                 <div class="product-bottom">
                     <p class="product-price"></p>
-                    <a class="product-action" href="#"></a>
+                    <a class="product-action" href="https://wa.me/5493415763811"></a>
                 </div>
             </div>
-            <a class="product-detail-hitarea" href="#"></a>
+            <a class="product-detail-hitarea" href="producto.html"></a>
         </article>
     </template>
 </body>
