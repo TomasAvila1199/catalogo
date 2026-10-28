@@ -1,0 +1,10 @@
+const fs = require('node:fs');
+const vm = require('node:vm');
+const path = require('node:path');
+const root = path.resolve(__dirname, '..');
+const context = { window: {} };
+vm.runInNewContext(fs.readFileSync(path.join(root, 'products.js'), 'utf8'), context);
+const slug = value => value.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
+const urls = ['https://scenth.com.ar/', ...context.window.CATALOG_PRODUCTS.map(p => `https://scenth.com.ar/producto.html?producto=${slug(`${p.brand}-${p.name}`)}`)];
+fs.writeFileSync(path.join(root, 'sitemap.xml'), `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${urls.map(url => `  <url><loc>${url}</loc></url>`).join('\n')}\n</urlset>\n`);
+console.log(`${urls.length} URLs written to sitemap.xml`);

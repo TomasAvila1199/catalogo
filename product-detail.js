@@ -57,33 +57,25 @@ function renderGallery(product, detail) {
     let activeIndex = 0;
     let pointerStartX = 0;
     let pointerId = null;
-    let autoAdvanceTimer = null;
-    let isPaused = false;
-    const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
     const slides = gallery.map((slide, index) => {
         const figure = document.createElement('figure');
         figure.className = 'detail-visual-slide';
         figure.setAttribute('aria-hidden', String(index !== 0));
 
-        const backdrop = document.createElement('img');
-        backdrop.className = 'detail-visual-backdrop';
-        backdrop.src = slide.src;
-        backdrop.alt = '';
-        backdrop.setAttribute('aria-hidden', 'true');
-        backdrop.draggable = false;
-        backdrop.decoding = 'async';
-        backdrop.loading = 'lazy';
-
         const image = document.createElement('img');
         image.className = 'detail-visual-image';
-        image.src = slide.src;
+        window.setCatalogImage(image, slide.src, '(max-width: 760px) calc(100vw - 32px), 600px');
+        image.width = 1200;
+        image.height = 1200;
+        image.fetchPriority = index === 0 ? 'high' : 'low';
+        image.addEventListener('error', () => { image.hidden = true; figure.classList.add('image-unavailable'); }, { once: true });
         image.alt = `${slide.label} de ${product.brand} ${product.name}`;
         image.draggable = false;
         image.decoding = 'async';
         image.loading = index === 0 ? 'eager' : 'lazy';
 
-        figure.append(backdrop, image);
+        figure.append(image);
         return figure;
     });
 
@@ -91,7 +83,7 @@ function renderGallery(product, detail) {
         const button = document.createElement('button');
         button.type = 'button';
         button.className = 'detail-visual-dot';
-        button.setAttribute('role', 'tab');
+        button.setAttribute('aria-pressed', String(index === 0));
         button.setAttribute('aria-label', `Ver ${slide.label}`);
         button.addEventListener('click', () => showSlide(index));
         return button;
@@ -99,12 +91,6 @@ function renderGallery(product, detail) {
 
     track.replaceChildren(...slides);
     dots.replaceChildren(...dotButtons);
-
-    function scheduleAutoAdvance() {
-        window.clearTimeout(autoAdvanceTimer);
-        if (gallery.length < 2 || reduceMotion || isPaused || document.hidden) return;
-        autoAdvanceTimer = window.setTimeout(() => showSlide(activeIndex + 1), 5500);
-    }
 
     function showSlide(index) {
         activeIndex = (index + gallery.length) % gallery.length;
@@ -115,9 +101,8 @@ function renderGallery(product, detail) {
         dotButtons.forEach((button, buttonIndex) => {
             const isActive = buttonIndex === activeIndex;
             button.classList.toggle('active', isActive);
-            button.setAttribute('aria-selected', String(isActive));
+            button.setAttribute('aria-pressed', String(isActive));
         });
-        scheduleAutoAdvance();
     }
 
     previous.addEventListener('click', () => showSlide(activeIndex - 1));
@@ -152,29 +137,6 @@ function renderGallery(product, detail) {
         pointerId = null;
     });
 
-    carousel.addEventListener('mouseenter', () => {
-        isPaused = true;
-        window.clearTimeout(autoAdvanceTimer);
-    });
-
-    carousel.addEventListener('mouseleave', () => {
-        isPaused = false;
-        scheduleAutoAdvance();
-    });
-
-    carousel.addEventListener('focusin', () => {
-        isPaused = true;
-        window.clearTimeout(autoAdvanceTimer);
-    });
-
-    carousel.addEventListener('focusout', (event) => {
-        if (carousel.contains(event.relatedTarget)) return;
-        isPaused = false;
-        scheduleAutoAdvance();
-    });
-
-    document.addEventListener('visibilitychange', scheduleAutoAdvance);
-
     const hasMultipleSlides = gallery.length > 1;
     previous.hidden = !hasMultipleSlides;
     next.hidden = !hasMultipleSlides;
@@ -188,6 +150,8 @@ function renderGallery(product, detail) {
 if (!product) {
     missing.hidden = false;
     document.title = 'Fragancia no encontrada | Scenth Store';
+    const robots = document.createElement('meta');
+    robots.name = 'robots'; robots.content = 'noindex'; document.head.append(robots);
 } else {
     const slug = detailSlugify(`${product.brand}-${product.name}`);
     const detail = productDetails[slug] || {};
@@ -198,8 +162,20 @@ if (!product) {
         : `Hola Scenth Store, quería consultar por ${productLabel} a pedido.`;
     const consultationMessage = `Hola Scenth Store, quería asesoramiento sobre ${productLabel}.`;
 
+    document.querySelector('#product-canonical').href = `https://scenth.com.ar/producto.html?producto=${encodeURIComponent(slug)}`;
     document.title = `${productLabel} | Scenth Store`;
     document.querySelector('meta[name="description"]').content = detail.description || fallbackDescription(product);
+    const schema = document.createElement('script');
+    schema.type = 'application/ld+json';
+    schema.textContent = JSON.stringify({
+        '@context': 'https://schema.org', '@type': 'Product',
+        name: productLabel, brand: { '@type': 'Brand', name: product.brand },
+        description: detail.description || fallbackDescription(product),
+        image: product.image ? new URL(product.image, 'https://scenth.com.ar/').href : undefined,
+        url: document.querySelector('#product-canonical').href
+    });
+    document.head.append(schema);
+
 
     document.querySelector('#detail-brand').textContent = product.brand;
     document.querySelector('#detail-name').textContent = product.name;
